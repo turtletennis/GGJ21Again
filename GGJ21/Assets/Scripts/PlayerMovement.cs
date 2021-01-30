@@ -1,0 +1,52 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    private CharacterController controller;
+
+    public float speed;
+    public float jumpPower;
+    public float gravity;
+    public int jumps = 1;
+
+    private float yVelocity;
+    private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
+
+    void Start()
+    {
+        controller = gameObject.GetComponent<CharacterController>();
+    }
+
+    void Update()
+    {
+        float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
+
+        //Vertical movement
+        //Jumping
+        if(Input.GetButtonDown("Jump"))
+        {
+            if (controller.isGrounded)
+            {
+                yVelocity = jumpPower;
+            }
+            else if(jumpsLeft > 0)
+            {
+                jumpsLeft--;
+                yVelocity = jumpPower;
+            }
+        }
+        //Falling
+        if (controller.isGrounded)
+        {
+            jumpsLeft = jumps - 1;
+        }
+        else
+        {
+            yVelocity -= gravity;
+        }
+
+        controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
+    }
+}
