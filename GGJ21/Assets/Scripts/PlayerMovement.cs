@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Vertical movement
         //Jumping
+        //Note, the jump button is space bar, not the up key... (A.E)
         if(Input.GetButtonDown("Jump"))
         {
             if (controller.isGrounded)
