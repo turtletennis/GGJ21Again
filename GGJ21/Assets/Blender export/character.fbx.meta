@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: -7408968806781539716
     second: metarig|walk
+  - first:
+      74: -8284908221344111450
+    second: metarig|jump
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|walk
-      takeName: metarig|walk
+      name: metarig|jump
+      takeName: metarig|jump
       internalID: 0
-      firstFrame: 1
-      lastFrame: 24
+      firstFrame: 0
+      lastFrame: 47
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
