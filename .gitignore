@@ -65,3 +65,4 @@ crashlytics-build.properties
 /GGJ21/Packages/packages-lock.json
 /Blender files/character.spp.painter_lock
 *_autosave_*.spp
+*.painter_lock
