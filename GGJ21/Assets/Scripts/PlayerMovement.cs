@@ -6,6 +6,7 @@ using Sound.PlayerSounds;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
+    private Animation anim;
 
     public float speed;
     public float jumpPower;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        anim = gameObject.GetComponent<Animation>();
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 yVelocity = jumpPower;
                 playerSounds.PlayJumpSound();
+                playAnimation("metarig|jump");
             }
             else if (jumpsLeft > 0)
             {
@@ -53,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
             jumpsLeft = jumps - 1;
+            playAnimation("metarig|walk");
             //yVelocity = 0;
         }
         else
@@ -99,5 +103,10 @@ public class PlayerMovement : MonoBehaviour
     {
         playerSounds.PlayFootStepSound();
         Debug.Log("footsteep triggered");
+    }
+
+    void playAnimation(string str)
+    {
+        anim.Play(str);
     }
 }
