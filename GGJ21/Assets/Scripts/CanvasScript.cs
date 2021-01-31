@@ -10,7 +10,7 @@ public class CanvasScript : MonoBehaviour
 
     private Image fade;
     private Image image;
-    private int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
+    public static int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
 
     void Start()
     {
