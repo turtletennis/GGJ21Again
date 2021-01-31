@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sound.PlayerSounds;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
+
+    public playerSounds playerSounds;
+        
+
+    
 
     void Start()
     {
@@ -31,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
             if (controller.isGrounded)
             {
                 yVelocity = jumpPower;
+
+                playerSounds.PlayJumpSound();
+
+
             }
             else if(jumpsLeft > 0)
             {
