@@ -61,4 +61,16 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
     }
+
+    public void playFootstepL()
+    {
+        playerSounds.PlayFootStepSound();
+        Debug.Log("footsteep triggered");
+    }
+
+    public void playFootstepR()
+    {
+        playerSounds.PlayFootStepSound();
+        Debug.Log("footsteep triggered");
+    }
 }

@@ -5865,6 +5865,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2940887838643432266, guid: 1e948c01b7736466f8eb82e218869023,
+        type: 3}
+      propertyPath: playerSoundsDebug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2940887838794106616, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}
       propertyPath: m_RootOrder

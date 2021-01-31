@@ -57,6 +57,7 @@ namespace Sound.PlayerSounds
         void Start()
         {
             soundEmitter = GetComponent<AudioSource>();
+           
         }
 
         void Update()
