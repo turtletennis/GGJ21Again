@@ -16,9 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
 
     public playerSounds playerSounds;
-        
-
-    
 
     void Start()
     {
@@ -27,37 +24,67 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(CanvasScript.memoryCycle == 0)
+        {
+            moveAndJump();
+        }
+    }
+
+    void moveAndJump()
+    {
         float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
 
         //Vertical movement
         //Jumping
-        //Note, the jump button is space bar, not the up key... (A.E)
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             if (controller.isGrounded)
             {
                 yVelocity = jumpPower;
-
-                //SH play JUMP sound
                 playerSounds.PlayJumpSound();
-
-
             }
-            else if(jumpsLeft > 0)
+            else if (jumpsLeft > 0)
             {
                 jumpsLeft--;
                 yVelocity = jumpPower;
             }
         }
         //Falling
-        if (controller.isGrounded)
+        if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
             jumpsLeft = jumps - 1;
+            //yVelocity = 0;
         }
         else
         {
             yVelocity -= gravity;
         }
+
+        //if (controller.isGrounded)
+        //{
+        //    if (Input.GetButtonDown("Jump"))
+        //    {
+        //        yVelocity = jumpPower;
+        //        playerSounds.PlayJumpSound();
+        //    }
+        //    else
+        //    {
+        //        jumpsLeft = jumps - 1;
+        //        yVelocity = 0;
+        //    }
+        //}
+        //else
+        //{
+        //    if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
+        //    {
+        //        jumpsLeft--;
+        //        yVelocity = jumpPower;
+        //    }
+        //    else
+        //    {
+        //        yVelocity -= gravity;
+        //    }
+        //}
 
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
     }
