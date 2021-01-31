@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|jump
-      takeName: metarig|jump
+      name: metarig|walk
+      takeName: metarig|walk
       internalID: 0
       firstFrame: 0
-      lastFrame: 47
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
