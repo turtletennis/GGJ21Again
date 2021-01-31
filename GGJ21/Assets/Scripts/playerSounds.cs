@@ -46,9 +46,7 @@ namespace Sound.PlayerSounds
         [SerializeField]
         bool landingDoNotRepeat = true;
 
-
         [Space(10)]
-
 
         [SerializeField]
         bool playerSoundsDebug;
@@ -120,7 +118,7 @@ namespace Sound.PlayerSounds
             }
         }
 
-        public void PlayDoubleJumpStepSound()
+        public void PlayDoubleJumpSound()
         {
             if (dBLJumpSounds.Length < 1)
             {

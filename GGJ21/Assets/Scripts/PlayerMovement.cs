@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 yVelocity = jumpPower;
 
+                //SH play JUMP sound
                 playerSounds.PlayJumpSound();
 
 
