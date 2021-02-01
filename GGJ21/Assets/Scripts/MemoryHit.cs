@@ -25,7 +25,8 @@ public class MemoryHit : MonoBehaviour
         MemorySettings mem = other.gameObject.GetComponent<MemorySettings>();
         if(mem)
         {
-            cs.showMemory(mem.image);
+            PlayerMovement.active = false;
+            cs.showMemory(mem.image, mem.scene);
             ab.setAbility(mem.ability);
             GameObject.Destroy(other.gameObject);
         }

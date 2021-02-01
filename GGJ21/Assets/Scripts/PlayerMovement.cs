@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float gravity;
-    public int jumps = 1;
+    public static int jumps = 1;
+    public static bool active = true;
 
     Animator animator;
 
@@ -33,17 +34,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(CanvasScript.memoryCycle == 0)
+        if(active)
         {
             moveAndJump();
-
-            //if (Input.GetAxis("Horizontal") == !0)
-            //{
-            //    isWalking = true;
-            //} else
-            //{
-            //    isWalking = false;
-            //}
+            if (!anim.isPlaying) anim.Play();
+        }
+        else
+        {
+            anim.Stop();
         }
     }
 
