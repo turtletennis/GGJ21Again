@@ -5109,6 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: bc1ac304951ef7940a5c79d0659b04de, type: 3}
   ability: 1
+  scene: 
 --- !u!54 &120135856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5518,11 +5519,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6542367647312899303, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7753e0ad0dd4d3e4fa7ce094d26a8049, type: 2}
     - target: {fileID: 919132149155446097, guid: 4efef74038e2a3b44bb171a3acbe32e6,
         type: 3}
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 5875550148832290061, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d0582f5a4928e04f928728800f7069f, type: 2}
+    - target: {fileID: 5979235936210454605, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d0582f5a4928e04f928728800f7069f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efef74038e2a3b44bb171a3acbe32e6, type: 3}
 --- !u!114 &1603487945 stripped
