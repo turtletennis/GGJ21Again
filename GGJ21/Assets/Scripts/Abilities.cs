@@ -13,7 +13,7 @@ public class Abilities : MonoBehaviour
 
     private CharacterController controller;
 
-    private bool unhideFound = false;
+    private static bool unhideFound = false;
     private MeshRenderer[] hiddenObjects;
 
     void Start()
@@ -48,7 +48,7 @@ public class Abilities : MonoBehaviour
         switch (ability)
         {
             case Ability.DOUBLE_JUMP:
-                gameObject.GetComponent<PlayerMovement>().jumps = 2;
+                PlayerMovement.jumps = 2;
                 break;
             case Ability.UNHIDE:
                 unhideFound = true;
