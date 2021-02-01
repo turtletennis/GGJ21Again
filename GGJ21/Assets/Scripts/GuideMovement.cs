@@ -50,6 +50,7 @@ public class GuideMovement : MonoBehaviour
         {
             gameObject.transform.Translate(moveVector);
             moving = false;
+            currentSpeed = 0;
         }
         else
         {
