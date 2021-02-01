@@ -15857,8 +15857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c2ce2c445663418c01f4c937698be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  jumpPower: 25
+  speed: 10
+  jumpPower: 15
   gravity: 0.9
   jumps: 1
   playerSounds: {fileID: 1815062301}

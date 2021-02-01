@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
     public int jumps = 1;
     public static bool active = true;
+    private bool facingRight = true; //This will indicate the char is facing right
 
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
@@ -70,6 +71,20 @@ public class PlayerMovement : MonoBehaviour
             yVelocity -= gravity;
         }
 
+        //If the input is moving the player right and the player is facing right
+        if (xMove < 0 && facingRight)
+        {
+            // flip the player
+            Flip();
+        }
+        else if (xMove > 0 && facingRight)
+        {
+            //flip the player.
+            Flip();
+        }
+        
+    
+
         //if (controller.isGrounded)
         //{
         //    if (Input.GetButtonDown("Jump"))
@@ -115,4 +130,15 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.Play(str);
     }
+
+    //Installing the flip here (Alex)
+    
+    void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        facingRight = !facingRight;
+
+        // Multiply the player's x local scale by -1.
+        transform.Rotate(0.0f, 180f, 0.0f);
+    }    
 }
