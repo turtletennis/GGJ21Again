@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower;
     public float gravity;
     public int jumps = 1;
+    public static bool active = true;
 
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
@@ -26,9 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(CanvasScript.memoryCycle == 0)
+        if(active)
         {
             moveAndJump();
+            if (!anim.isPlaying) anim.Play();
+        }
+        else
+        {
+            anim.Stop();
         }
     }
 
