@@ -6077,10 +6077,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c2ce2c445663418c01f4c937698be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 1
   jumpPower: 25
   gravity: 0.9
   jumps: 1
+  isWalking: 0
   playerSounds: {fileID: 1815062301}
 --- !u!143 &1815062297
 CharacterController:
@@ -6255,6 +6256,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1815062303
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815062295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4efef74038e2a3b44bb171a3acbe32e6, type: 3}
+  m_Controller: {fileID: 9100000, guid: 21f28bf61a2384e268b383c92e3db2ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1815062304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815062295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfb62121260a4caf9e7c99ef710f2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1950907036
 PrefabInstance:
   m_ObjectHideFlags: 0

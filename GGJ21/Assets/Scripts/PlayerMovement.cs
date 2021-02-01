@@ -6,22 +6,29 @@ using Sound.PlayerSounds;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
-    private Animation anim;
+    //private Animation anim;
 
     public float speed;
     public float jumpPower;
     public float gravity;
     public int jumps = 1;
 
+    Animator animator;
+
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
 
+    public bool isWalking;
+
     public playerSounds playerSounds;
+
+
 
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
-        anim = gameObject.GetComponent<Animation>();
+        //anim = gameObject.GetComponent<Animation>();
+        
     }
 
     void Update()
@@ -29,34 +36,64 @@ public class PlayerMovement : MonoBehaviour
         if(CanvasScript.memoryCycle == 0)
         {
             moveAndJump();
+
+            //if (Input.GetAxis("Horizontal") == !0)
+            //{
+            //    isWalking = true;
+            //} else
+            //{
+            //    isWalking = false;
+            //}
         }
     }
 
-    void moveAndJump()
-    {
-        float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
 
-        //Vertical movement
-        //Jumping
-        if (Input.GetButtonDown("Jump"))
-        {
+    public void addJump()
+
+    {
+        //if (Input.GetButtonDown("Jump"))
+        //{
             if (controller.isGrounded)
             {
                 yVelocity = jumpPower;
                 playerSounds.PlayJumpSound();
-                playAnimation("metarig|jump");
+                //playAnimation("metarig|jump");
             }
             else if (jumpsLeft > 0)
             {
                 jumpsLeft--;
                 yVelocity = jumpPower;
             }
-        }
+        //}
+    }
+
+    void moveAndJump()
+    {
+        float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
+        
+
+        //Vertical movement
+        //Jumping
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    if (controller.isGrounded)
+        //    {
+        //        yVelocity = jumpPower;
+        //        playerSounds.PlayJumpSound();
+        //        //playAnimation("metarig|jump");
+        //    }
+        //    else if (jumpsLeft > 0)
+        //    {
+        //        jumpsLeft--;
+        //        yVelocity = jumpPower;
+        //    }
+        //}
         //Falling
+
         if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
             jumpsLeft = jumps - 1;
-            playAnimation("metarig|walk");
+            //playAnimation("metarig|walk");
             //yVelocity = 0;
         }
         else
@@ -107,6 +144,6 @@ public class PlayerMovement : MonoBehaviour
 
     void playAnimation(string str)
     {
-        anim.Play(str);
+        //anim.Play(str);
     }
 }
