@@ -7,12 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
     private Animation anim;
-    private Transform transform;
 
     public float speed;
     public float jumpPower;
     public float gravity;
-    public int jumps = 1;
+    public static int jumps = 1;
     public static bool active = true;
 
     private float yVelocity;
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         anim = gameObject.GetComponent<Animation>();
-        transform= gameObject.GetComponent<Transform>();
     }
 
     void Update()
@@ -39,23 +37,20 @@ public class PlayerMovement : MonoBehaviour
             anim.Stop();
         }
     }
-    private const string jumpAnimationName = "metarig|jump";
-    private const string walkAnimationName = "metarig|walk";
-    private const float animationSpeedMultiplier = 90.0f;
+
     void moveAndJump()
     {
         float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
 
         //Vertical movement
         //Jumping
-        bool jumping = Input.GetButtonDown("Jump");
-        if (jumping)
+        if (Input.GetButtonDown("Jump"))
         {
             if (controller.isGrounded)
             {
                 yVelocity = jumpPower;
                 playerSounds.PlayJumpSound();
-                playAnimation(jumpAnimationName);
+                playAnimation("metarig|jump");
             }
             else if (jumpsLeft > 0)
             {
@@ -63,12 +58,11 @@ public class PlayerMovement : MonoBehaviour
                 yVelocity = jumpPower;
             }
         }
-        
         //Falling
         if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
             jumpsLeft = jumps - 1;
-            playAnimation(walkAnimationName);
+            playAnimation("metarig|walk");
             //yVelocity = 0;
         }
         else
@@ -101,14 +95,8 @@ public class PlayerMovement : MonoBehaviour
         //        yVelocity -= gravity;
         //    }
         //}
-        float startX = transform.position.x;
+
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
-        float newX = transform.position.x;
-        float deltaX = newX - startX;
-        if (!jumping)
-        {
-            anim[walkAnimationName].speed = deltaX * animationSpeedMultiplier;
-        }
     }
 
     public void playFootstepL()
