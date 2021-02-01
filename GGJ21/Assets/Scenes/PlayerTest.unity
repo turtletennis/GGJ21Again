@@ -6077,8 +6077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c2ce2c445663418c01f4c937698be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  jumpPower: 25
+  speed: 5
+  jumpPower: 15
   gravity: 0.9
   jumps: 1
   isWalking: 0
@@ -6287,6 +6287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfb62121260a4caf9e7c99ef710f2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1815062297}
 --- !u!1001 &1950907036
 PrefabInstance:
   m_ObjectHideFlags: 0
