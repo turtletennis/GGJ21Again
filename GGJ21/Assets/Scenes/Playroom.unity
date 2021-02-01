@@ -6446,7 +6446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1815062295}
-  zoom: 12
+  zoom: 3
 --- !u!114 &1753069270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6587,7 +6587,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!114 &1815062298
 MonoBehaviour:
   m_ObjectHideFlags: 0
