@@ -75,7 +75,7 @@ AnimatorState:
   m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7408968806781539716, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+  m_Motion: {fileID: -7408968806781539716, guid: bc0d368621c6741d49e553ba56974463,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -157,7 +157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8284908221344111450, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+  m_Motion: {fileID: -8284908221344111450, guid: bc0d368621c6741d49e553ba56974463,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -178,25 +178,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isColliding
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -257,7 +257,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2611075726810385300, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+  m_Motion: {fileID: 2611075726810385300, guid: bc0d368621c6741d49e553ba56974463,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
