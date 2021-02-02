@@ -6,7 +6,7 @@ using Sound.PlayerSounds;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
-    //private Animation anim;
+    private AnimationStateController animCtrl; //Calls changes to animations so that inputs for the player character are all contained in PlayerMovement (and Abilities)
 
     public float speed;
     public float jumpPower;
@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         //anim = gameObject.GetComponent<Animation>();
+        animCtrl = gameObject.GetComponent<AnimationStateController>();
         animator = GetComponent<Animator>();
         
     }
@@ -38,14 +39,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (active)
         {
-            moveAndJump();
-            //if (!anim.isPlaying) anim.Play();
+            handleJump();
+            movement();
         }
-        else
-        {
-            //anim.Stop();
-        }
-
+        /*
         if (Input.GetButtonDown("Jump"))
         {
             if (!controller.isGrounded && jumpsLeft > 0)
@@ -53,8 +50,7 @@ public class PlayerMovement : MonoBehaviour
                 addJump();
             }
         }
-
-       
+        */
     }
 
     void OnCollisionEnter(Collision collision)
@@ -67,90 +63,44 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-
-    public void addJump()
-
+    void handleJump()
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
+        if (Input.GetButtonDown("Jump"))
+        {
             if (controller.isGrounded)
             {
-                yVelocity = jumpPower;
-                playerSounds.PlayJumpSound();
-                //playAnimation("metarig|jump");
+                animCtrl.setJumping();
             }
-            else if (jumpsLeft > 0)
+            else if(!controller.isGrounded && jumpsLeft > 0)
             {
-                jumpsLeft--;
-                yVelocity = jumpPower;
+                addDoubleJump();
             }
-        //}
+        }
     }
 
-    public void addDoubleJump()
-
+    public void addJump()
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        if (controller.isGrounded)
-        {
-            yVelocity = jumpPower;
-            playerSounds.PlayJumpSound();
-            //playAnimation("metarig|jump");
-        }
-        else if (jumpsLeft > 0)
-        {
-            jumpsLeft--;
-            yVelocity = jumpPower;
-        }
-        //}
+        yVelocity = jumpPower;
+        playerSounds.PlayJumpSound();
+        //playAnimation("metarig|jump");
     }
 
-    void moveAndJump()
+    //I'm assuming this was added so that a seperate animation can be used for jumping in midair
+    public void addDoubleJump()
+    {
+        yVelocity = jumpPower;
+        jumpsLeft--; //jumpsLeft refers to midair jumps
+        playerSounds.PlayJumpSound();
+    }
+
+    void movement()
     {
         float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
 
-
-        //Vertical movement
-        //Jumping
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    if (controller.isGrounded)
-        //    {
-        //        yVelocity = jumpPower;
-        //        playerSounds.PlayJumpSound();
-        //        //playAnimation("metarig|jump");
-        //    }
-        //    else if (jumpsLeft > 0)
-        //    {
-        //        jumpsLeft--;
-        //        yVelocity = jumpPower;
-        //    }
-        //}
-        //Falling
-
-        //if (animator.getbool(animator.stringtohash("isjumping")))
-        //    {
-        //    xmove = 0;
-        //}
-
-        if (controller.isGrounded && !Input.GetButtonDown("Jump"))
-        {
-          
-            jumpsLeft = jumps - 1;
-            //playAnimation("metarig|walk");
-            //yVelocity = 0;
-
-
-
-        }
-        else
+        if (!controller.isGrounded)
         {
             yVelocity -= gravity;
         }
-
-      
-
 
         //If the input is moving the player right and the player is facing right
             if (xMove < 0 && facingRight)
@@ -161,34 +111,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
-        
-    
-
-        //if (controller.isGrounded)
-        //{
-        //    if (Input.GetButtonDown("Jump"))
-        //    {
-        //        yVelocity = jumpPower;
-        //        playerSounds.PlayJumpSound();
-        //    }
-        //    else
-        //    {
-        //        jumpsLeft = jumps - 1;
-        //        yVelocity = 0;
-        //    }
-        //}
-        //else
-        //{
-        //    if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
-        //    {
-        //        jumpsLeft--;
-        //        yVelocity = jumpPower;
-        //    }
-        //    else
-        //    {
-        //        yVelocity -= gravity;
-        //    }
-        //}
 
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
     }
@@ -216,4 +138,3 @@ public class PlayerMovement : MonoBehaviour
 
 
 }
-

@@ -54,17 +54,17 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
         }
 
+        /*
         if (!isJumping && jumpMovement)
         {
             //animator.SetBool(isWalkingHash, false);
             animator.SetBool(isJumpingHash, true);
         }
-
+        */
         if (isJumping && !jumpMovement)
         {
             animator.SetBool(isJumpingHash, false);
         }
-
 
         //if (!isWalking && leftPress)
         //{
@@ -77,6 +77,11 @@ public class AnimationStateController : MonoBehaviour
         //}
 
 
+    }
+
+    public void setJumping()
+    {
+        animator.SetBool(isJumpingHash, true);
     }
 }
 
