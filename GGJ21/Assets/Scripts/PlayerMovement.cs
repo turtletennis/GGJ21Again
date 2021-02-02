@@ -134,17 +134,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
     }
 
-    public void FSEventL()
-    {
-        playerSounds.PlayFootStepSound();
-        Debug.Log("footstep triggered");
-    }
-
-    public void FSEventR()
-    {
-        playerSounds.PlayFootStepSound();
-        Debug.Log("footstep triggered");
-    }
+   
 
     void playAnimation(string str)
     {

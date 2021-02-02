@@ -150,7 +150,7 @@ namespace Sound.PlayerSounds
         {
             if (soundEmitter.isPlaying)
             {
-                soundEmitter.Stop();
+                soundEmitter.Stop();    
             }
 
             RadomizePitch(landingPitchMin, landingPitchMax);

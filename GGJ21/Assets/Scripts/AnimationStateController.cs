@@ -35,15 +35,16 @@ public class AnimationStateController : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            animator.SetBool(isGroundedHash , true);
-        } else
+            animator.SetBool(isGroundedHash, true);
+        }
+        else
         {
             animator.SetBool(isGroundedHash, false);
         }
 
         if (!isWalking && horizonalMovement && controller.isGrounded)
         {
-            animator.SetBool(isWalkingHash, true);  
+            animator.SetBool(isWalkingHash, true);
         }
 
         if (isWalking && !horizonalMovement)
@@ -76,3 +77,5 @@ public class AnimationStateController : MonoBehaviour
 
     }
 }
+
+   
