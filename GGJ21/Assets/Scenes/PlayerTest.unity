@@ -16009,10 +16009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c2ce2c445663418c01f4c937698be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   jumpPower: 25
   gravity: 0.9
-  animator: {fileID: 0}
   isWalking: 0
   playerSounds: {fileID: 1815062301}
 --- !u!143 &1815062297
