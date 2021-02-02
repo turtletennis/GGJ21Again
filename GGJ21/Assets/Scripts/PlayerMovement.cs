@@ -74,12 +74,10 @@ public class PlayerMovement : MonoBehaviour
         //If the input is moving the player right and the player is facing right
         if (xMove < 0 && facingRight)
         {
-            // flip the player
             Flip();
         }
-        else if (xMove > 0 && facingRight)
+        else if (xMove > 0 && !facingRight)
         {
-            //flip the player.
             Flip();
         }
         

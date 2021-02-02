@@ -15870,7 +15870,6 @@ MonoBehaviour:
   speed: 10
   jumpPower: 15
   gravity: 0.9
-  jumps: 1
   playerSounds: {fileID: 1815062301}
 --- !u!143 &1815062297
 CharacterController:
