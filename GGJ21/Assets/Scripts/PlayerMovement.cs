@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public static int jumps = 1;
     public static bool active = true;
 
-    Animator animator;
+    public Animator animator;
 
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
@@ -29,19 +29,20 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         //anim = gameObject.GetComponent<Animation>();
+        animator = GetComponent<Animator>();
         
     }
 
     void Update()
     {
-        if(active)
+        if (active)
         {
             moveAndJump();
-            if (!anim.isPlaying) anim.Play();
+            //if (!anim.isPlaying) anim.Play();
         }
         else
         {
-            anim.Stop();
+            //anim.Stop();
         }
     }
 
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     void moveAndJump()
     {
         float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
-        
+
 
         //Vertical movement
         //Jumping
@@ -87,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
         //    }
         //}
         //Falling
+
+        if (animator.GetBool(Animator.StringToHash("isJumping")))
+            {
+            xMove = 0;
+        }
 
         if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
@@ -128,20 +134,30 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
     }
 
-    public void playFootstepL()
+    public void FSEventL()
     {
         playerSounds.PlayFootStepSound();
-        Debug.Log("footsteep triggered");
+        Debug.Log("footstep triggered");
     }
 
-    public void playFootstepR()
+    public void FSEventR()
     {
         playerSounds.PlayFootStepSound();
-        Debug.Log("footsteep triggered");
+        Debug.Log("footstep triggered");
     }
 
     void playAnimation(string str)
     {
         //anim.Play(str);
     }
+
+
+    //if (animator.GetBool(Animator.StringToHash("isWalking")))
+    //{
+    //    animator.SetBool("isWalking", false);
+
+    //}
+
+
 }
+

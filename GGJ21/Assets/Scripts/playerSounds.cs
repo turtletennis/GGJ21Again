@@ -186,5 +186,17 @@ namespace Sound.PlayerSounds
                 soundArray[0] = soundEmitter.clip;
             }
         }
+
+        public void FSEventL()
+        {
+            PlayFootStepSound();
+            //Debug.Log("footstep triggered");
+        }
+
+        public void FSEventR()
+        {
+            PlayFootStepSound();
+            //Debug.Log("footstep triggered");
+        }
     }
 }
