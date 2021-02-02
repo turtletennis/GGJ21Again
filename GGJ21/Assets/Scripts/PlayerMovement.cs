@@ -45,6 +45,26 @@ public class PlayerMovement : MonoBehaviour
         {
             //anim.Stop();
         }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (!controller.isGrounded && jumpsLeft > 0)
+            {
+                addJump();
+            }
+        }
+
+       
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("ICH");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+       
     }
 
 
@@ -64,6 +84,25 @@ public class PlayerMovement : MonoBehaviour
                 jumpsLeft--;
                 yVelocity = jumpPower;
             }
+        //}
+    }
+
+    public void addDoubleJump()
+
+    {
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        if (controller.isGrounded)
+        {
+            yVelocity = jumpPower;
+            playerSounds.PlayJumpSound();
+            //playAnimation("metarig|jump");
+        }
+        else if (jumpsLeft > 0)
+        {
+            jumpsLeft--;
+            yVelocity = jumpPower;
+        }
         //}
     }
 
@@ -90,24 +129,31 @@ public class PlayerMovement : MonoBehaviour
         //}
         //Falling
 
-        if (animator.GetBool(Animator.StringToHash("isJumping")))
-            {
-            xMove = 0;
-        }
+        //if (animator.getbool(animator.stringtohash("isjumping")))
+        //    {
+        //    xmove = 0;
+        //}
 
         if (controller.isGrounded && !Input.GetButtonDown("Jump"))
         {
+          
             jumpsLeft = jumps - 1;
             //playAnimation("metarig|walk");
             //yVelocity = 0;
+
+
+
         }
         else
         {
             yVelocity -= gravity;
         }
 
+      
+
+
         //If the input is moving the player right and the player is facing right
-        if (xMove < 0 && facingRight)
+            if (xMove < 0 && facingRight)
         {
             Flip();
         }
@@ -163,6 +209,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Multiply the player's x local scale by -1.
         transform.Rotate(0.0f, 180f, 0.0f);
-    }    
+    }
+
+    
+
+
+
 }
 
