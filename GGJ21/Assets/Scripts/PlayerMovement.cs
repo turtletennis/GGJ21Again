@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float gravity;
-    public int jumps = 1;
+    public static int jumps = 1;
     public static bool active = true;
     private bool facingRight = true; //This will indicate the char is facing right
 

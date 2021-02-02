@@ -5091,6 +5091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: bc1ac304951ef7940a5c79d0659b04de, type: 3}
   ability: 1
+  scene: 
 --- !u!54 &120135856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6278,6 +6279,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 5875550148832290061, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d0582f5a4928e04f928728800f7069f, type: 2}
+    - target: {fileID: 5979235936210454605, guid: 4efef74038e2a3b44bb171a3acbe32e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d0582f5a4928e04f928728800f7069f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efef74038e2a3b44bb171a3acbe32e6, type: 3}
 --- !u!1001 &1574870709
@@ -6446,7 +6457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1815062295}
-  zoom: 12
+  zoom: 3
 --- !u!114 &1753069270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6587,7 +6598,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!114 &1815062298
 MonoBehaviour:
   m_ObjectHideFlags: 0
