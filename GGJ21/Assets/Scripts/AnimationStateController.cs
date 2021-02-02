@@ -30,7 +30,9 @@ public class AnimationStateController : MonoBehaviour
         bool isWalking = animator.GetBool(isWalkingHash);
         bool isJumping = animator.GetBool(isJumpingHash);
         bool isGrounded = animator.GetBool(isGroundedHash);
-        bool horizonalMovement = Input.GetKey("d") || Input.GetKey("a");
+        bool horizonalMovement = Input.GetButton("Horizontal");
+        //bool horizonalMovement = Input.GetKey("d") || Input.GetKey("a");
+
         bool jumpMovement = Input.GetButton("Jump");
 
         if (controller.isGrounded)
