@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (active)
         {
+            if (!animator.enabled) animator.enabled = true;
             handleJump();
             movement();
         }
@@ -51,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         */
+        else
+        {
+            if (animator.enabled) animator.enabled = false;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
