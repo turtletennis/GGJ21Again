@@ -61,7 +61,8 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isJumpingHash, true);
         }
         */
-        if (isJumping && !jumpMovement)
+        //if (isJumping && !jumpMovement)
+        if(isJumping)
         {
             animator.SetBool(isJumpingHash, false);
         }

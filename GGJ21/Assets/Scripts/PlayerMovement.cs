@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void addJump()
     {
+        if (!controller.isGrounded) return;
         yVelocity = jumpPower;
         playerSounds.PlayJumpSound();
         //playAnimation("metarig|jump");
@@ -100,6 +101,10 @@ public class PlayerMovement : MonoBehaviour
         if (!controller.isGrounded)
         {
             yVelocity -= gravity;
+        }
+        else
+        {
+            jumpsLeft = jumps - 1;
         }
 
         //If the input is moving the player right and the player is facing right
