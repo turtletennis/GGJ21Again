@@ -9,6 +9,7 @@ public class AnimationStateController : MonoBehaviour
     int isWalkingHash;
     int isJumpingHash;
     int isGroundedHash;
+    bool jumpMovement = false;
 
     public CharacterController controller;
 
@@ -32,8 +33,6 @@ public class AnimationStateController : MonoBehaviour
         bool isGrounded = animator.GetBool(isGroundedHash);
         bool horizonalMovement = Input.GetButton("Horizontal");
         //bool horizonalMovement = Input.GetKey("d") || Input.GetKey("a");
-
-        bool jumpMovement = Input.GetButton("Jump");
 
         if (controller.isGrounded)
         {
@@ -61,10 +60,15 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isJumpingHash, true);
         }
         */
-        //if (isJumping && !jumpMovement)
-        if(isJumping)
+        if (isJumping && !jumpMovement)
+        {
+            jumpMovement = true;
+        }
+
+        if(isJumping && jumpMovement)
         {
             animator.SetBool(isJumpingHash, false);
+            jumpMovement = false;
         }
 
         //if (!isWalking && leftPress)
