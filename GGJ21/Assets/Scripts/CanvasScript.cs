@@ -16,6 +16,7 @@ public class CanvasScript : MonoBehaviour
     private readonly float DEFAULT_X = 100f;
     public static int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
     private string nextScene;
+    private bool deathFade = false;
 
     void Start()
     {
@@ -27,9 +28,29 @@ public class CanvasScript : MonoBehaviour
 
     void Update()
     {
+        if(memoryCycle != 0) memoryUpdate();
+        if (deathFade) deathFadeUpdate();
+    }
+
+    public void showMemory(Sprite memory, string scene)
+    {
+        image.sprite = memory;
+        nextScene = scene;
+        memoryCycle = 1;
+    }
+
+    //Fading screen effect when the player dies
+    public void playDeathFade()
+    {
+        PlayerMovement.active = false;
+        deathFade = true;
+    }
+
+    void memoryUpdate()
+    {
         //Update fading memory effect
         Color c;
-        if(memoryCycle == 1)
+        if (memoryCycle == 1)
         {
             if ((string.Equals(nextScene, string.Empty) && fade.color.a < fadeAlpha) || (!string.Equals(nextScene, string.Empty) && fade.color.a < 1f))
             {
@@ -52,14 +73,14 @@ public class CanvasScript : MonoBehaviour
                 rt.anchoredPosition = new Vector2(DEFAULT_X, (1 - c.a) * -100);
             }
         }
-        else if(memoryCycle == 2)
+        else if (memoryCycle == 2)
         {
             if (Input.anyKeyDown)
             {
                 memoryCycle = 3;
             }
         }
-        else if(memoryCycle == 3)
+        else if (memoryCycle == 3)
         {
             if (image.color.a > 0f)
             {
@@ -92,10 +113,18 @@ public class CanvasScript : MonoBehaviour
         }
     }
 
-    public void showMemory(Sprite memory, string scene)
+    void deathFadeUpdate()
     {
-        image.sprite = memory;
-        nextScene = scene;
-        memoryCycle = 1;
+        Color c = fade.color;
+        if (c.a >= 1f)
+        {
+            PlayerMovement.active = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            c.a += fadeIncr * Time.deltaTime;
+            fade.color = c;
+        }
     }
 }

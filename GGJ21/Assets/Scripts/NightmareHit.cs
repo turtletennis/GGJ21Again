@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class NightmareHit : MonoBehaviour
 {
+    private CanvasScript cs;
+
     void Start()
     {
-        
+        cs = GameObject.Find("Canvas").GetComponent<CanvasScript>();
     }
 
     void Update()
@@ -19,7 +20,8 @@ public class NightmareHit : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Nightmare"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            cs.playDeathFade();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //Update this when we get a death animation
         }
     }
