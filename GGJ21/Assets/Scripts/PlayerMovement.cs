@@ -104,14 +104,18 @@ public class PlayerMovement : MonoBehaviour
 
     void movement()
     {
-        float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
-
+        float xMove;
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("metarig|jump land"))
         {
             //controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime );
-            controller.Move(new Vector3(xMove, yVelocity, 0) * 0);
+            //controller.Move(new Vector3(xMove, yVelocity, 0) * 0);
+            xMove = 0;
 
-            return;
+            //return;
+        }
+        else
+        {
+            xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
         }
 
        
