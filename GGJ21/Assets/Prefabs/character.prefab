@@ -742,6 +742,7 @@ GameObject:
   - component: {fileID: 3003705117393917570}
   - component: {fileID: 3003705117393917571}
   - component: {fileID: 3003705117393917630}
+  - component: {fileID: 919132148156695886}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -913,6 +914,8 @@ MonoBehaviour:
   speed: 10
   jumpPower: 30
   gravity: 0.9
+  flipRotationSpeeed: 0.2
+  lerpFlipRotation: 1
   animator: {fileID: 0}
   isWalking: 0
   playerSounds: {fileID: 3003705117393917571}
@@ -1007,6 +1010,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3003705117393917575}
+--- !u!114 &919132148156695886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966ca50c466a0fa44960254058071c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
