@@ -5064,13 +5064,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6553430124117195898, guid: 3c666fcbfe0f8444197fc59239a24b3b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2811.6606
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553430124117195898, guid: 3c666fcbfe0f8444197fc59239a24b3b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.75
+      value: -213.5
       objectReference: {fileID: 0}
     - target: {fileID: 6553430124117195898, guid: 3c666fcbfe0f8444197fc59239a24b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.14e-13
       objectReference: {fileID: 0}
     - target: {fileID: 6553430124117195898, guid: 3c666fcbfe0f8444197fc59239a24b3b,
         type: 3}
@@ -5441,7 +5446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &706552800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10457,7 +10462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &900602086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15757,7 +15762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1979525753
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16325,6 +16330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917575, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}

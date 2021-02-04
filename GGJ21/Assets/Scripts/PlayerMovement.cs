@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public static int jumps = 1;
     public static bool active = true;
     private bool facingRight = true; //This will indicate the char is facing right
+    public float flipRotationSpeeed = 0.2f;
+    public bool lerpFlipRotation = true;
 
     public Animator animator;
 
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         //anim = gameObject.GetComponent<Animation>();
         animCtrl = gameObject.GetComponent<AnimationStateController>();
         animator = GetComponent<Animator>();
+        
         
     }
 
@@ -103,6 +106,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float xMove = Input.GetAxis("Horizontal") * speed; //Move player right/left
 
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("metarig|jump land"))
+        {
+            //controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime );
+            controller.Move(new Vector3(xMove, yVelocity, 0) * 0);
+
+            return;
+        }
+
+       
+
         if (!controller.isGrounded)
         {
             yVelocity -= gravity;
@@ -122,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-        controller.Move(new Vector3(xMove, yVelocity, 0) * Time.deltaTime);
+        controller.Move(new Vector3(xMove, yVelocity, 0)  * Time.deltaTime);
     }
 
    
@@ -137,14 +150,46 @@ public class PlayerMovement : MonoBehaviour
     void Flip()
     {
         // Switch the way the player is labelled as facing.
+
         facingRight = !facingRight;
 
         // Multiply the player's x local scale by -1.
-        transform.Rotate(0.0f, 180f, 0.0f);
+        //transform.Rotate(0.0f, 180f, 0.0f);
+        if (lerpFlipRotation)
+        {
+            if (facingRight)
+            {
+                StartCoroutine(LerpFunction(Quaternion.Euler(0, 90, 0), flipRotationSpeeed));
+            }
+
+            if (!facingRight)
+            {
+                StartCoroutine(LerpFunction(Quaternion.Euler(0, 270, 0), flipRotationSpeeed));
+            }
+        }
+        else
+        {
+            transform.Rotate(0.0f, 180f, 0.0f);
+        }
+
+    }   
+
+    IEnumerator LerpFunction(Quaternion endValue, float duration)
+    {
+        float time = 0;
+        Quaternion startValue = transform.rotation;
+
+        while (time < duration)
+        {
+            transform.rotation = Quaternion.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = endValue;
     }
+}
 
     
 
 
 
-}
