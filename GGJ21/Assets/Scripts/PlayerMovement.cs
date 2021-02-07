@@ -73,8 +73,9 @@ public class PlayerMovement : MonoBehaviour
 
     void handleJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
+            
             if (controller.isGrounded)
             {
                 animCtrl.setJumping();

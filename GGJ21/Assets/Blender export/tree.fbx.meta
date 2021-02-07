@@ -2,7 +2,13 @@ fileFormatVersion: 2
 guid: 5c9c8ab5ef9ae15449024f1c93926ef1
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -7377693965954270367
+    second: coin.000|coin.000Action
+  - first:
+      74: -804021044303262825
+    second: coin.000|Shader NodetreeAction.001
   externalObjects: {}
   materials:
     materialImportMode: 1
