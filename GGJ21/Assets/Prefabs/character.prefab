@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &384639342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384639343}
+  - component: {fileID: 384639344}
+  m_Layer: 0
+  m_Name: coliii
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &384639343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384639342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3325332861645745761}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &384639344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384639342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.02, z: 4.66}
+  m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!1 &24784193366538862
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,9 +787,10 @@ GameObject:
   - component: {fileID: 3003705117393917571}
   - component: {fileID: 3003705117393917630}
   - component: {fileID: 919132148156695886}
+  - component: {fileID: 1467285537}
   m_Layer: 0
   m_Name: character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -763,6 +808,7 @@ Transform:
   m_Children:
   - {fileID: 6381720650759950966}
   - {fileID: 1464698476610615526}
+  - {fileID: 384639343}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
@@ -912,8 +958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 30
-  gravity: 0.9
+  jumpPower: 25
+  gravity: 0.7
   flipRotationSpeeed: 0.2
   lerpFlipRotation: 1
   animator: {fileID: 0}
@@ -1022,6 +1068,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966ca50c466a0fa44960254058071c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1467285537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada2e9bd969d74ee8b4853a7b446e0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPefab: {fileID: 2697133024291828955}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  respawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
