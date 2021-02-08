@@ -7,7 +7,8 @@ public class BlockCollide : MonoBehaviour
 {
     private AudioSource  soundEmitter;
     [SerializeField] AudioClip bounceSound;
-   
+    [SerializeField] float collisionThreshold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,14 @@ public class BlockCollide : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if((collision.relativeVelocity.magnitude >  (4 , 4 , 4)) { return; }
+       //if(collision.relativeVelocity.magnitude < collisionThreshold)
+       // {
+       //     Debug.Log("Collisionblocks");
+       //     soundEmitter.clip = bounceSound;
+       //     soundEmitter.Play();
+       // }
 
 
-        Debug.Log("Collisionblocks");
-        soundEmitter.clip = bounceSound;
-        soundEmitter.Play();
+     
     }
 }
