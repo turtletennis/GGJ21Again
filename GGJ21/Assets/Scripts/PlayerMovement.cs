@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isWalking;
 
-    private playerSounds playerSounds;
+    public playerSounds playerSounds;
 
 
 
@@ -35,9 +35,8 @@ public class PlayerMovement : MonoBehaviour
         //anim = gameObject.GetComponent<Animation>();
         animCtrl = gameObject.GetComponent<AnimationStateController>();
         animator = GetComponent<Animator>();
-        playerSounds = GetComponent<playerSounds>();
-
-
+        
+        
     }
 
     void Update()
