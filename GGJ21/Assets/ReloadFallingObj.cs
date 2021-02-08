@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReloadFallingObj : MonoBehaviour
 {
-    [SerializeField] Vector3 respawnPosition;
+    private Vector3 respawnPosition;
     [SerializeField] Quaternion respawnRotation;
  
     public GameObject blockPrefab;
@@ -22,6 +22,8 @@ public class ReloadFallingObj : MonoBehaviour
     void Start()
     {
         
+        respawnPosition = playereRespawnPosition.transform.position;
+        respawnRotation = playereRespawnPosition.transform.rotation;
     }
 
     // Update is called once per fram
