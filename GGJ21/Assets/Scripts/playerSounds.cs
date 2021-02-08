@@ -38,7 +38,9 @@ namespace Sound.PlayerSounds
         bool dBLJumpDoNotRepeat = true;
 
         [SerializeField]
-        AudioClip[] landingSounds;
+        AudioClip[] beachLandingSounds;
+        [SerializeField]
+        AudioClip[] mainLandingSounds;
         [SerializeField]
         float landingPitchMin = 1;
         [SerializeField]
@@ -67,130 +69,15 @@ namespace Sound.PlayerSounds
 
         public void PlayFootStepSound(bool _ifSand)
         {
-
-           
-            if(!_ifSand)
-            {
-
-                if (mainFootSteps.Length < 1)
-                {
-                    if (playerSoundsDebug)
-                    {
-                        Debug.Log("mainFootSteps[] is empty - RETURN");
-                    }
-                    return;
-                }
-
-                if (soundEmitter.isPlaying)
-                {
-                    soundEmitter.Stop();
-                }
-
-                RadomizePitch(fsPitchMin, fsPitchMax);
-                ChooseSound(mainFootSteps);
-                soundEmitter.PlayOneShot(soundEmitter.clip);
-                NoRepeat(fsDoNotRepeat, mainFootSteps);
-
-                if (playerSoundsDebug)
-                {
-                    Debug.Log("Play FOOTSTEP sound");
-                }
-            }
-
-            else
-            {
-                if (beachFoosteps.Length < 1)
-                {
-                    if (playerSoundsDebug)
-                    {
-                        Debug.Log("beachFoosteps[] is empty - RETURN");
-                    }
-                    return;
-                }
-
-                if (soundEmitter.isPlaying)
-                {
-                    soundEmitter.Stop();
-                }
-
-                RadomizePitch(fsPitchMin, fsPitchMax);
-                ChooseSound(beachFoosteps);
-                soundEmitter.volume = 0.4f;
-                soundEmitter.PlayOneShot(soundEmitter.clip);
-                NoRepeat(fsDoNotRepeat, beachFoosteps);
-
-                if (playerSoundsDebug)
-                {
-                    Debug.Log("Play FOOTSTEP sound");
-                }
-            }
+            PlaySFXPlayer(mainFootSteps , beachFoosteps , fsPitchMin , fsPitchMax, fsDoNotRepeat , ifSand);
         }
 
         public void PlayJumpSound()
         {
-            PlayJumpSound(ifSand);
+            PlaySFXPlayer(mainJumpSounds , beachJumpSounds , jumpPitchMin , jumpPitchMax , jumpDoNotRepeat , ifSand);
         }
 
-        private void PlayJumpSound(bool _ifSand)
-        {
-
-            if (!_ifSand)
-            {
-
-                if(mainJumpSounds.Length < 1)
-                {
-                    if (playerSoundsDebug)
-                    {
-                        Debug.Log("jumpSounds[] is empty - RETURN");
-                    }
-                    return; 
-                }
-
-                if (soundEmitter.isPlaying)
-                {
-                    soundEmitter.Stop();
-                }
-
-                RadomizePitch(jumpPitchMin, jumpPitchMax);
-                ChooseSound(mainJumpSounds);
-                soundEmitter.PlayOneShot(soundEmitter.clip);
-                NoRepeat(jumpDoNotRepeat, mainJumpSounds);
-
-                if (playerSoundsDebug)
-                {
-                    Debug.Log("Play JUMP sound");
-                }
-
-                else
-                {
-                    if (beachJumpSounds.Length < 1)
-                    {
-                        if (playerSoundsDebug)
-                        {
-                            Debug.Log("jumpSounds[] is empty - RETURN");
-                        }
-                        return;
-                    }
-
-                    if (soundEmitter.isPlaying)
-                    {
-                        soundEmitter.Stop();
-                    }
-
-                    RadomizePitch(jumpPitchMin, jumpPitchMax);
-                    ChooseSound(beachJumpSounds);
-                    soundEmitter.PlayOneShot(soundEmitter.clip);
-                    NoRepeat(jumpDoNotRepeat, beachJumpSounds);
-
-                    if (playerSoundsDebug)
-                    {
-                        Debug.Log("Play JUMP sound");
-                    }
-
-                }
-            }
-        }
-
+       
         public void PlayDoubleJumpSound()
         {
             if (dBLJumpSounds.Length < 1)
@@ -220,21 +107,7 @@ namespace Sound.PlayerSounds
 
         public void PlayLandingSound()
         {
-            if (soundEmitter.isPlaying)
-            {
-                soundEmitter.Stop();    
-            }
-
-            RadomizePitch(landingPitchMin, landingPitchMax);
-            ChooseSound(landingSounds);
-          
-            soundEmitter.PlayOneShot(soundEmitter.clip);
-            NoRepeat(landingDoNotRepeat, landingSounds);
-
-            if (playerSoundsDebug)
-            {
-                Debug.Log("Play Landing sound");
-            }
+            PlaySFXPlayer(mainLandingSounds, beachLandingSounds, landingPitchMin, landingPitchMax, landingDoNotRepeat, ifSand);
 
         }
 
@@ -272,11 +145,82 @@ namespace Sound.PlayerSounds
             //Debug.Log("footstep triggered");
         }
 
-
         public void LandSFXEvent()
         {
-
             PlayLandingSound();
+        }
+
+        public void PlaySFXPlayer(AudioClip[] _mainAudioArray , AudioClip[] _beachAudioArray , float _minPitch , float _maxPitch , bool _doNotRepeat , bool _ifSand)
+        {
+
+            if (_beachAudioArray == null || _beachAudioArray.Length <= 1)
+            {
+                Debug.Log(_beachAudioArray + " is null, so no SFX to play");
+                return;
+                
+            }
+
+            if (_mainAudioArray == null || _mainAudioArray.Length <= 1)
+            {
+                Debug.Log(_mainAudioArray + " is null, so no SFX to play");
+                return;
+
+            }
+            if (!_ifSand)
+            {
+
+                if (_mainAudioArray.Length < 1)
+                {
+                    if (playerSoundsDebug)
+                    {
+                        Debug.Log("mainFootSteps[] is empty - RETURN");
+                    }
+                    return;
+                }
+
+                if (soundEmitter.isPlaying)
+                {
+                    soundEmitter.Stop();
+                }
+
+                RadomizePitch(_minPitch, _maxPitch);
+                ChooseSound(_mainAudioArray);
+                soundEmitter.PlayOneShot(soundEmitter.clip);
+                NoRepeat(_doNotRepeat, _mainAudioArray);
+
+                if (playerSoundsDebug)
+                {
+                    Debug.Log("Play FOOTSTEP sound");
+                }
+            }
+
+            else
+            {
+                if (beachFoosteps.Length < 1)
+                {
+                    if (playerSoundsDebug)
+                    {
+                        Debug.Log("beachFoosteps[] is empty - RETURN");
+                    }
+                    return;
+                }
+
+                if (soundEmitter.isPlaying)
+                {
+                    soundEmitter.Stop();
+                }
+
+                RadomizePitch(_minPitch, _maxPitch);
+                ChooseSound(_beachAudioArray);
+                soundEmitter.volume = 0.4f;
+                soundEmitter.PlayOneShot(soundEmitter.clip);
+                NoRepeat(_doNotRepeat, _beachAudioArray);
+
+                if (playerSoundsDebug)
+                {
+                    Debug.Log("Play FOOTSTEP sound");
+                }
+            }
         }
     }
 

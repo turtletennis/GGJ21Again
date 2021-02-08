@@ -8759,6 +8759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
+      propertyPath: ifSand
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
       propertyPath: jumpPitchMax
       value: 0.9
       objectReference: {fileID: 0}
@@ -8780,7 +8785,7 @@ PrefabInstance:
     - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: playerSoundsDebug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
@@ -8907,6 +8912,46 @@ PrefabInstance:
       propertyPath: footstepSounds.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 99cc4d6ef173f4964877f6250c64635a, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c56b3da24a74b414ea7f4c7c6db89e39, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b56e745448775e4b8ab9a246af867cd, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dc936d4a721ecc4f93c92a2f112c471, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 240dbc61c4787d24da0deae8661c01e9, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1eccca1969c324d4a8b38d88cb6d831b, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81bf5cc471f3260439a2d80ae3d7d578, type: 3}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_RootOrder
