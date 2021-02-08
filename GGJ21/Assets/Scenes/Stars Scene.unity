@@ -1160,6 +1160,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917568, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: ifSand
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917574, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: jumpPower
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_RootOrder

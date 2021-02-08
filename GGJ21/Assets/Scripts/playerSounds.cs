@@ -17,10 +17,10 @@ namespace Sound.PlayerSounds
         [SerializeField] float fsPitchMin = 1;
         [SerializeField] float fsPitchMax = 1;
         [SerializeField] bool fsDoNotRepeat = true;
+        [SerializeField] float fsVolume = 0.2f;
 
-    
-       
-        
+
+
         [SerializeField] AudioClip[] beachJumpSounds;
         [SerializeField] AudioClip[] mainJumpSounds;
         [SerializeField] float jumpPitchMin = 1;
@@ -115,7 +115,7 @@ namespace Sound.PlayerSounds
 
                 RadomizePitch(fsPitchMin, fsPitchMax);
                 ChooseSound(beachFoosteps);
-                soundEmitter.volume = 0.4f;
+                soundEmitter.volume = fsVolume;
                 soundEmitter.PlayOneShot(soundEmitter.clip);
                 NoRepeat(fsDoNotRepeat, beachFoosteps);
 
