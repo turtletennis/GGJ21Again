@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2940887838643432267
 Transform:
   m_ObjectHideFlags: 0
@@ -141,14 +141,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ifSand: 0
-  beachFoosteps: []
-  mainFootSteps: []
+  footstepSounds: []
   fsPitchMin: 1
   fsPitchMax: 1
   fsDoNotRepeat: 1
-  fsVolume: 0.2
-  beachJumpSounds: []
-  mainJumpSounds: []
+  jumpSounds:
+  - {fileID: 8300000, guid: 839f78dd0546c497387104e6650dd62b, type: 3}
+  - {fileID: 8300000, guid: 77939469dd3af4b779760170de4c3af7, type: 3}
+  - {fileID: 8300000, guid: 72e32d82603a64dfd982759e32badc2d, type: 3}
+  - {fileID: 8300000, guid: 086c1f4bbdddf4cb4a5015a1c70b3ee8, type: 3}
+  - {fileID: 8300000, guid: 99cc4d6ef173f4964877f6250c64635a, type: 3}
   jumpPitchMin: 1.1
   jumpPitchMax: 0.9
   jumpDoNotRepeat: 1

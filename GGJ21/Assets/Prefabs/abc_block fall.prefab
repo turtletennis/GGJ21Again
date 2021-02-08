@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8404876913108247439}
   - component: {fileID: 492414385}
   - component: {fileID: 492414384}
-  - component: {fileID: 2346761203246720599}
   m_Layer: 0
   m_Name: abc_block fall
   m_TagString: Blocks
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9114670545845112}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -222,21 +221,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSound: {fileID: 8300000, guid: 72e32d82603a64dfd982759e32badc2d, type: 3}
-  collisionThreshold: 0
---- !u!114 &2346761203246720599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9114670545845112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be92155daf494bf9b7e0e615f7c678d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnRotation: {x: 0, y: 0, z: 0, w: 0}
-  blockPrefab: {fileID: 9114670545845112}
-  respawnPlayerPosition: {x: 0, y: 0, z: 0}
-  respawnPlayerRotation: {x: 0, y: 0, z: 0, w: 0}
-  playereRespawnPosition: {fileID: 0}
