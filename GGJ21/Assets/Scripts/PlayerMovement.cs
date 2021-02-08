@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float yVelocity;
     private int jumpsLeft = 0; //Number of midair jumps left (default = jumps - 1)
+    private bool isJumpReady = true; //Needed for double jumps
 
     public bool isWalking;
 
@@ -75,15 +76,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButton("Jump"))
         {
-            
             if (controller.isGrounded)
             {
                 animCtrl.setJumping();
+                isJumpReady = false;
             }
-            else if(!controller.isGrounded && jumpsLeft > 0)
+            else if(!controller.isGrounded && jumpsLeft > 0 && isJumpReady)
             {
                 addDoubleJump();
             }
+        }
+
+        //Reset jump key to allow double jumps
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumpReady = true;
         }
     }
 

@@ -151,7 +151,7 @@ ModelImporter:
       name: metarig|jump up
       takeName: metarig|jump up
       internalID: 0
-      firstFrame: 0
+      firstFrame: 6
       lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
@@ -172,7 +172,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5446043
+      - time: 0.12712857
         functionName: addJump
         data: 
         objectReferenceParameter: {instanceID: 0}
