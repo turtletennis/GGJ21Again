@@ -155,6 +155,7 @@ namespace Sound.PlayerSounds
 
             RadomizePitch(landingPitchMin, landingPitchMax);
             ChooseSound(landingSounds);
+          
             soundEmitter.PlayOneShot(soundEmitter.clip);
             NoRepeat(landingDoNotRepeat, landingSounds);
 
@@ -198,5 +199,14 @@ namespace Sound.PlayerSounds
             PlayFootStepSound();
             //Debug.Log("footstep triggered");
         }
+
+
+        public void LandSFXEvent()
+        {
+
+            PlayLandingSound();
+        }
     }
+
+
 }

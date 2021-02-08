@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1467285537}
   m_Layer: 0
   m_Name: character
-  m_TagString: Player
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPefab: {fileID: 2697133024291828955}
-  respawnPosition: {x: 0, y: 0, z: 0}
+  respawnPosition: {fileID: 0}
   respawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2763970869374566300
 GameObject:
