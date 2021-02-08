@@ -13,22 +13,19 @@ namespace Sound.PlayerSounds
         [SerializeField] bool ifSand;
 
         [SerializeField] AudioClip[] beachFoosteps;
+        [SerializeField] AudioClip[] mainFootSteps;
         [SerializeField] float fsPitchMin = 1;
         [SerializeField] float fsPitchMax = 1;
         [SerializeField] bool fsDoNotRepeat = true;
 
-        [SerializeField] AudioClip[] mainFootSteps;
+    
        
         
-
-        [SerializeField]
-        AudioClip[] jumpSounds;
-        [SerializeField]
-        float jumpPitchMin = 1;
-        [SerializeField]
-        float jumpPitchMax = 1;
-        [SerializeField]
-        bool jumpDoNotRepeat = true;
+        [SerializeField] AudioClip[] beachJumpSounds;
+        [SerializeField] AudioClip[] mainJumpSounds;
+        [SerializeField] float jumpPitchMin = 1;
+        [SerializeField] float jumpPitchMax = 1;
+        [SerializeField] bool jumpDoNotRepeat = true;
 
 
         [SerializeField]
@@ -131,28 +128,66 @@ namespace Sound.PlayerSounds
 
         public void PlayJumpSound()
         {
-            if(jumpSounds.Length < 1)
+            PlayJumpSound(ifSand);
+        }
+
+        private void PlayJumpSound(bool _ifSand)
+        {
+
+            if (!_ifSand)
             {
+
+                if(mainJumpSounds.Length < 1)
+                {
+                    if (playerSoundsDebug)
+                    {
+                        Debug.Log("jumpSounds[] is empty - RETURN");
+                    }
+                    return; 
+                }
+
+                if (soundEmitter.isPlaying)
+                {
+                    soundEmitter.Stop();
+                }
+
+                RadomizePitch(jumpPitchMin, jumpPitchMax);
+                ChooseSound(mainJumpSounds);
+                soundEmitter.PlayOneShot(soundEmitter.clip);
+                NoRepeat(jumpDoNotRepeat, mainJumpSounds);
+
                 if (playerSoundsDebug)
                 {
-                    Debug.Log("jumpSounds[] is empty - RETURN");
+                    Debug.Log("Play JUMP sound");
                 }
-                return; 
-            }
 
-            if (soundEmitter.isPlaying)
-            {
-                soundEmitter.Stop();
-            }
+                else
+                {
+                    if (beachJumpSounds.Length < 1)
+                    {
+                        if (playerSoundsDebug)
+                        {
+                            Debug.Log("jumpSounds[] is empty - RETURN");
+                        }
+                        return;
+                    }
 
-            RadomizePitch(jumpPitchMin, jumpPitchMax);
-            ChooseSound(jumpSounds);
-            soundEmitter.PlayOneShot(soundEmitter.clip);
-            NoRepeat(jumpDoNotRepeat, jumpSounds);
+                    if (soundEmitter.isPlaying)
+                    {
+                        soundEmitter.Stop();
+                    }
 
-            if (playerSoundsDebug)
-            {
-                Debug.Log("Play JUMP sound");
+                    RadomizePitch(jumpPitchMin, jumpPitchMax);
+                    ChooseSound(beachJumpSounds);
+                    soundEmitter.PlayOneShot(soundEmitter.clip);
+                    NoRepeat(jumpDoNotRepeat, beachJumpSounds);
+
+                    if (playerSoundsDebug)
+                    {
+                        Debug.Log("Play JUMP sound");
+                    }
+
+                }
             }
         }
 
