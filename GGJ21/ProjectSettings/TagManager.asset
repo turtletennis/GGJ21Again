@@ -9,6 +9,7 @@ TagManager:
   - Nightmare
   - Blocks
   - respawnPlayer
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
