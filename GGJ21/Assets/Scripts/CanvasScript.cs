@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class CanvasScript : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class CanvasScript : MonoBehaviour
         image = gameObject.transform.Find("Image").GetComponent<Image>();
         rt = image.gameObject.GetComponent<RectTransform>();
         rect = rt.rect;
+
+        UnityEngine.Object pauseMenu = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PauseScreen.prefab", typeof(GameObject));
+        GameObject.Instantiate(pauseMenu, gameObject.transform);
     }
 
     void Update()
