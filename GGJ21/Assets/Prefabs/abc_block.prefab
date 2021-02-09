@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9114670545845112}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 18.038029, y: -0.00000010456995, z: 1.7518697}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.020000001, z: 0.020000001}
+  m_Size: {x: 0.0199, y: 0.0199, z: 0.0199}
   m_Center: {x: 0.01, y: 0.010000001, z: 0.010000001}
 --- !u!114 &621822185
 MonoBehaviour:
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b907212a1be34d6e93038d8db21c807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambSound: {fileID: 0}
 --- !u!54 &759499229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b907212a1be34d6e93038d8db21c807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambSound: {fileID: 0}
       inSlope: 0
       outSlope: 0
       tangentMode: 0
