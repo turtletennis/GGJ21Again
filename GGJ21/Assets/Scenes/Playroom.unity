@@ -5340,7 +5340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be92155daf494bf9b7e0e615f7c678d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPosition: {x: -10, y: 31, z: 6}
   respawnRotation: {x: 0, y: 0, z: 0, w: 0}
   blockPrefab: {fileID: 9114670545845112, guid: 130f0602589ec47758c23b8d3b13b559,
     type: 3}
@@ -5898,7 +5897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be92155daf494bf9b7e0e615f7c678d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPosition: {x: -10, y: 31, z: 6}
   respawnRotation: {x: 0, y: 0, z: 0, w: 0}
   blockPrefab: {fileID: 9114670545845112, guid: 130f0602589ec47758c23b8d3b13b559,
     type: 3}
@@ -9389,6 +9387,46 @@ PrefabInstance:
       propertyPath: 
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c56b3da24a74b414ea7f4c7c6db89e39, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b56e745448775e4b8ab9a246af867cd, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: mainLandingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dc936d4a721ecc4f93c92a2f112c471, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 240dbc61c4787d24da0deae8661c01e9, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1eccca1969c324d4a8b38d88cb6d831b, type: 3}
+    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: beachLandingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81bf5cc471f3260439a2d80ae3d7d578, type: 3}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_RootOrder
@@ -9821,7 +9859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be92155daf494bf9b7e0e615f7c678d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPosition: {x: -10, y: 31, z: 6}
   respawnRotation: {x: 0, y: 0, z: 0, w: 0}
   blockPrefab: {fileID: 9114670545845112, guid: 130f0602589ec47758c23b8d3b13b559,
     type: 3}
@@ -10807,6 +10844,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822946047902966210, guid: d04c6feddfc898940a6b6e9ff1be7d02,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822946047902966210, guid: d04c6feddfc898940a6b6e9ff1be7d02,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822946047902966210, guid: d04c6feddfc898940a6b6e9ff1be7d02,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 822946047902966210, guid: d04c6feddfc898940a6b6e9ff1be7d02,
         type: 3}
