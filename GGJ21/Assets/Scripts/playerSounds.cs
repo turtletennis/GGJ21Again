@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sound.PlayerSounds
-{
+
 
     [RequireComponent(typeof(AudioSource))]
 
@@ -50,10 +49,11 @@ namespace Sound.PlayerSounds
 
         [Space(10)]
 
-        [SerializeField] bool playerSoundsDebug = false;
+        [SerializeField]
+        bool playerSoundsDebug = false;
 
         private AudioSource soundEmitter;
-        private int lastArrayPosition;
+        private int lastArrayPosition = 0;
 
         void Start()
         {
@@ -179,6 +179,7 @@ namespace Sound.PlayerSounds
 
                 RadomizePitch(_minPitch, _maxPitch);
                 ChooseSound(_mainAudioArray);
+                soundEmitter.volume = 0.5f;
                 soundEmitter.PlayOneShot(soundEmitter.clip);
                 NoRepeat(_doNotRepeat, _mainAudioArray);
 
@@ -206,7 +207,7 @@ namespace Sound.PlayerSounds
 
                 RadomizePitch(_minPitch, _maxPitch);
                 ChooseSound(_beachAudioArray);
-                soundEmitter.volume = 0.4f;
+                soundEmitter.volume = 0.2f;
                 soundEmitter.PlayOneShot(soundEmitter.clip);
                 NoRepeat(_doNotRepeat, _beachAudioArray);
 
@@ -278,4 +279,4 @@ namespace Sound.PlayerSounds
     }
 
 
-}
+
