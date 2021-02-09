@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sound.PlayerSounds
-{
+
 
     [RequireComponent(typeof(AudioSource))]
 
     public class playerSounds : MonoBehaviour
     {
 
-        [SerializeField] bool ifSand;
+        [SerializeField] bool ifSand = false;
 
-        [SerializeField] AudioClip[] beachFoosteps;
-        [SerializeField] AudioClip[] mainFootSteps;
+        [SerializeField] AudioClip[] beachFoosteps = null;
+        [SerializeField] AudioClip[] mainFootSteps = null;
         [SerializeField] float fsPitchMin = 1;
         [SerializeField] float fsPitchMax = 1;
         [SerializeField] bool fsDoNotRepeat = true;
@@ -21,15 +20,15 @@ namespace Sound.PlayerSounds
     
        
         
-        [SerializeField] AudioClip[] beachJumpSounds;
-        [SerializeField] AudioClip[] mainJumpSounds;
+        [SerializeField] AudioClip[] beachJumpSounds = null;
+        [SerializeField] AudioClip[] mainJumpSounds = null;
         [SerializeField] float jumpPitchMin = 1;
         [SerializeField] float jumpPitchMax = 1;
         [SerializeField] bool jumpDoNotRepeat = true;
 
 
         [SerializeField]
-        AudioClip[] dBLJumpSounds;
+        AudioClip[] dBLJumpSounds = null;
         [SerializeField]
         float dBLJumpPitchMin = 1;
         [SerializeField]
@@ -38,9 +37,9 @@ namespace Sound.PlayerSounds
         bool dBLJumpDoNotRepeat = true;
 
         [SerializeField]
-        AudioClip[] beachLandingSounds;
+        AudioClip[] beachLandingSounds = null;
         [SerializeField]
-        AudioClip[] mainLandingSounds;
+        AudioClip[] mainLandingSounds = null;
         [SerializeField]
         float landingPitchMin = 1;
         [SerializeField]
@@ -51,10 +50,10 @@ namespace Sound.PlayerSounds
         [Space(10)]
 
         [SerializeField]
-        bool playerSoundsDebug;
+        bool playerSoundsDebug = false;
 
         private AudioSource soundEmitter;
-        private int lastArrayPosition;
+        private int lastArrayPosition = 0;
 
         void Start()
         {
@@ -185,6 +184,7 @@ namespace Sound.PlayerSounds
 
                 RadomizePitch(_minPitch, _maxPitch);
                 ChooseSound(_mainAudioArray);
+                soundEmitter.volume = 0.5f;
                 soundEmitter.PlayOneShot(soundEmitter.clip);
                 NoRepeat(_doNotRepeat, _mainAudioArray);
 
@@ -212,7 +212,7 @@ namespace Sound.PlayerSounds
 
                 RadomizePitch(_minPitch, _maxPitch);
                 ChooseSound(_beachAudioArray);
-                soundEmitter.volume = 0.4f;
+                soundEmitter.volume = 0.2f;
                 soundEmitter.PlayOneShot(soundEmitter.clip);
                 NoRepeat(_doNotRepeat, _beachAudioArray);
 
@@ -225,4 +225,4 @@ namespace Sound.PlayerSounds
     }
 
 
-}
+

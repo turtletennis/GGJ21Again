@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sound.PlayerSounds;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isWalking;
 
-    public playerSounds playerSounds;
+    private playerSounds playerSounds;
 
 
 
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         //anim = gameObject.GetComponent<Animation>();
         animCtrl = gameObject.GetComponent<AnimationStateController>();
         animator = GetComponent<Animator>();
+        playerSounds = GetComponent<playerSounds>();
         
         
     }

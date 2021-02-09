@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class ReloadFallingObj : MonoBehaviour
 {
     [SerializeField] Vector3 respawnPosition;
@@ -17,11 +19,13 @@ public class ReloadFallingObj : MonoBehaviour
     [SerializeField] GameObject playereRespawnPosition;
     //[SerializeField] Quaternion respawnRotation;
 
+    private AudioSource soundEmitter;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundEmitter = GetComponent<AudioSource>();
     }
 
     // Update is called once per fram
@@ -39,6 +43,11 @@ public class ReloadFallingObj : MonoBehaviour
             //SpawnBlock();
 
             //newBlock.transform.position = respawnPosition;
+
+            
+
+
+
             Instantiate(blockPrefab, respawnPosition , respawnRotation);
             //respawnPosition.z = respawnPosition.z + 10;
 
@@ -51,6 +60,17 @@ public class ReloadFallingObj : MonoBehaviour
         }
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if(gameObject.CompareTag("Floor"))
+        //{
+        //    if(collision.relativeVelocity.magnitude > 4)
+
+
+        //    Debug.Log("AAA" + collision.relativeVelocity.magnitude);
+        //}
     }
 
 

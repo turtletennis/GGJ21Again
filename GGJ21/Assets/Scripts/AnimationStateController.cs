@@ -13,6 +13,7 @@ public class AnimationStateController : MonoBehaviour
 
     public CharacterController controller;
 
+    
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class AnimationStateController : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking");
         isJumpingHash = Animator.StringToHash("isJumping");
         isGroundedHash = Animator.StringToHash("isGrounded");
+        
     }
 
     // Update is called once per frame
@@ -88,6 +90,8 @@ public class AnimationStateController : MonoBehaviour
     {
         animator.SetBool(isJumpingHash, true);
     }
+
+    
 }
 
    

@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 8787246341659297198}
   m_Layer: 0
   m_Name: carpet (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &9113078378885538704
 Transform:
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8445366594203531562}
-  m_LocalRotation: {x: -0.49916747, y: -0.5008311, z: -0.5008311, w: 0.49916747}
+  m_LocalRotation: {x: -0.49916595, y: -0.5008327, z: -0.5008327, w: 0.49916595}
   m_LocalPosition: {x: -6, y: 0, z: -10.25}
   m_LocalScale: {x: 250, y: 250, z: 250}
   m_Children: []
@@ -50,7 +50,7 @@ MeshRenderer:
   m_GameObject: {fileID: 8445366594203531562}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -91,5 +91,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.080000006, y: 0.16, z: 0}
-  m_Center: {x: 0.040000003, y: 0.08, z: 0}
+  m_Size: {x: 0.080000006, y: 0.16, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0.004}
