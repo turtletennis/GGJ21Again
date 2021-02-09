@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 1467285535}
   - component: {fileID: 1467285530}
   - component: {fileID: 2248906671184525422}
+  - component: {fileID: 697110149864951948}
   m_Layer: 0
   m_Name: character
   m_TagString: Respawn
@@ -863,8 +864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 30
-  gravity: 0.7
+  jumpPower: 25
+  gravity: 1
   flipRotationSpeeed: 0.2
   lerpFlipRotation: 1
   animator: {fileID: 0}
@@ -919,6 +920,219 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!82 &1467285535
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 6.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 12.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 25.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 51.2
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 102.4
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 204.8
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 409.6
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 500
+      value: 1e-45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1467285530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -927,12 +1141,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 2697133024291828955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada2e9bd969d74ee8b4853a7b446e0c6, type: 3}
+  m_Script: {fileID: 11500000, guid: e2d590201ad7e47a6a05e4cd517b4f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPefab: {fileID: 2697133024291828955}
-  respawnPosition: {fileID: 0}
-  respawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  ifSand: 0
+  beachFoosteps:
+  - {fileID: 8300000, guid: 0410031717253e046b76ade8f1f631f4, type: 3}
+  - {fileID: 8300000, guid: 80682ff1e296ef64085d831e57c013e1, type: 3}
+  - {fileID: 8300000, guid: 59eddc91244041f468bcce0756a5c05e, type: 3}
+  - {fileID: 8300000, guid: 91702914b34cf3c488c8913640b3fffa, type: 3}
+  - {fileID: 8300000, guid: 01076531f953b30448b25544b7718765, type: 3}
+  mainFootSteps:
+  - {fileID: 8300000, guid: 50cc10b9ae4873e43b21316fc153d387, type: 3}
+  - {fileID: 8300000, guid: c4b50ca4329bacc45bb071c74fb94a02, type: 3}
+  - {fileID: 8300000, guid: 3c911aa55dd932d4f82f3ea43fbc9644, type: 3}
+  - {fileID: 8300000, guid: 416f24920c69b0441b3587c36288785f, type: 3}
+  - {fileID: 8300000, guid: 4b88829cae0893847a6648a03685f97e, type: 3}
+  fsPitchMin: 1
+  fsPitchMax: 1
+  fsDoNotRepeat: 1
+  fsVolume: 0.2
+  beachJumpSounds:
+  - {fileID: 8300000, guid: 7895e28118754c84e80beeef4fe8f7be, type: 3}
+  - {fileID: 8300000, guid: dc104698caf59e14bb79b0bc17d97ad6, type: 3}
+  - {fileID: 8300000, guid: 9c785a7560a7aea41b8ea50cebb46bff, type: 3}
+  mainJumpSounds:
+  - {fileID: 8300000, guid: 9873d7a7a6f4c5b42b54abe46313766d, type: 3}
+  - {fileID: 8300000, guid: ec8cae9accdd94a48832bf035be28629, type: 3}
+  - {fileID: 8300000, guid: b3800bcd62b2e784aab7623bf7df2288, type: 3}
+  jumpPitchMin: 1.1
+  jumpPitchMax: 0.9
+  jumpDoNotRepeat: 1
+  dBLJumpSounds: []
+  dBLJumpPitchMin: 1
+  dBLJumpPitchMax: 1
+  dBLJumpDoNotRepeat: 1
+  beachLandingSounds:
+  - {fileID: 8300000, guid: 240dbc61c4787d24da0deae8661c01e9, type: 3}
+  - {fileID: 8300000, guid: 1eccca1969c324d4a8b38d88cb6d831b, type: 3}
+  - {fileID: 8300000, guid: 81bf5cc471f3260439a2d80ae3d7d578, type: 3}
+  mainLandingSounds:
+  - {fileID: 8300000, guid: c56b3da24a74b414ea7f4c7c6db89e39, type: 3}
+  - {fileID: 8300000, guid: 1b56e745448775e4b8ab9a246af867cd, type: 3}
+  - {fileID: 8300000, guid: 3dc936d4a721ecc4f93c92a2f112c471, type: 3}
+  landingPitchMin: 1
+  landingPitchMax: 1
+  landingDoNotRepeat: 0
+  playerSoundsDebug: 0
+--- !u!114 &2248906671184525422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a25d322d6b479954291594a01e7a6dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: 
 --- !u!82 &697110149864951948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1029,74 +1297,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1467285530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2697133024291828955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d590201ad7e47a6a05e4cd517b4f81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ifSand: 0
-  beachFoosteps:
-  - {fileID: 8300000, guid: 0410031717253e046b76ade8f1f631f4, type: 3}
-  - {fileID: 8300000, guid: 80682ff1e296ef64085d831e57c013e1, type: 3}
-  - {fileID: 8300000, guid: 59eddc91244041f468bcce0756a5c05e, type: 3}
-  - {fileID: 8300000, guid: 91702914b34cf3c488c8913640b3fffa, type: 3}
-  - {fileID: 8300000, guid: 01076531f953b30448b25544b7718765, type: 3}
-  mainFootSteps:
-  - {fileID: 8300000, guid: 50cc10b9ae4873e43b21316fc153d387, type: 3}
-  - {fileID: 8300000, guid: c4b50ca4329bacc45bb071c74fb94a02, type: 3}
-  - {fileID: 8300000, guid: 3c911aa55dd932d4f82f3ea43fbc9644, type: 3}
-  - {fileID: 8300000, guid: 416f24920c69b0441b3587c36288785f, type: 3}
-  - {fileID: 8300000, guid: 4b88829cae0893847a6648a03685f97e, type: 3}
-  fsPitchMin: 1
-  fsPitchMax: 1
-  fsDoNotRepeat: 1
-  beachJumpSounds:
-  - {fileID: 8300000, guid: 7895e28118754c84e80beeef4fe8f7be, type: 3}
-  - {fileID: 8300000, guid: dc104698caf59e14bb79b0bc17d97ad6, type: 3}
-  - {fileID: 8300000, guid: 9c785a7560a7aea41b8ea50cebb46bff, type: 3}
-  mainJumpSounds:
-  - {fileID: 8300000, guid: 9873d7a7a6f4c5b42b54abe46313766d, type: 3}
-  - {fileID: 8300000, guid: ec8cae9accdd94a48832bf035be28629, type: 3}
-  - {fileID: 8300000, guid: b3800bcd62b2e784aab7623bf7df2288, type: 3}
-  jumpPitchMin: 1.1
-  jumpPitchMax: 0.9
-  jumpDoNotRepeat: 1
-  dBLJumpSounds: []
-  dBLJumpPitchMin: 1
-  dBLJumpPitchMax: 1
-  dBLJumpDoNotRepeat: 1
-  beachLandingSounds:
-  - {fileID: 8300000, guid: 240dbc61c4787d24da0deae8661c01e9, type: 3}
-  - {fileID: 8300000, guid: 1eccca1969c324d4a8b38d88cb6d831b, type: 3}
-  - {fileID: 8300000, guid: 81bf5cc471f3260439a2d80ae3d7d578, type: 3}
-  mainLandingSounds:
-  - {fileID: 8300000, guid: c56b3da24a74b414ea7f4c7c6db89e39, type: 3}
-  - {fileID: 8300000, guid: 1b56e745448775e4b8ab9a246af867cd, type: 3}
-  - {fileID: 8300000, guid: 3dc936d4a721ecc4f93c92a2f112c471, type: 3}
-  landingPitchMin: 1
-  landingPitchMax: 1
-  landingDoNotRepeat: 0
-  playerSoundsDebug: 0
---- !u!114 &2248906671184525422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2697133024291828955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a25d322d6b479954291594a01e7a6dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: 
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1514,7 @@ MonoBehaviour:
   fsPitchMin: 1
   fsPitchMax: 1
   fsDoNotRepeat: 1
+  fsVolume: 0.2
   beachJumpSounds:
   - {fileID: 8300000, guid: 7895e28118754c84e80beeef4fe8f7be, type: 3}
   - {fileID: 8300000, guid: dc104698caf59e14bb79b0bc17d97ad6, type: 3}
