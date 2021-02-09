@@ -29,8 +29,15 @@ public class blockOnColl : MonoBehaviour
         {
             if(collision.relativeVelocity.magnitude > 15)
             {
-
-                ambSound.PlayBlock();
+                if (ambSound != null)
+                {
+                    ambSound.PlayBlock();
+                }
+                else
+                {
+                    Debug.Log("No collision sound found");
+                }
+                
             }
         }
     }
