@@ -18,6 +18,7 @@ public class CanvasScript : MonoBehaviour
     public static int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
     private string nextScene;
     private bool deathFade = false;
+    public GameObject pauseScreen=null;
 
     void Start()
     {
@@ -26,8 +27,9 @@ public class CanvasScript : MonoBehaviour
         rt = image.gameObject.GetComponent<RectTransform>();
         rect = rt.rect;
 
-        UnityEngine.Object pauseMenu = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PauseScreen.prefab", typeof(GameObject));
-        GameObject.Instantiate(pauseMenu, gameObject.transform);
+
+        //UnityEngine.Object pauseMenu = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PauseScreen.prefab", typeof(GameObject));
+        GameObject.Instantiate(pauseScreen, gameObject.transform);
     }
 
     void Update()
