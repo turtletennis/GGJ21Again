@@ -379,6 +379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
 --- !u!4 &128001096 stripped
@@ -956,6 +961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: poison puddle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6593386267802557231, guid: 82312e40e9e2f704f957c45fd25f7666,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 470554572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
 --- !u!1 &442888767
@@ -1062,6 +1072,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7514ce38a0e401e4c9a026ffd6c1aacb, type: 3}
+--- !u!1 &470554572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2697133024291828955, guid: 8e6b218e24db2b74aabd4a909d84c742,
+    type: 3}
+  m_PrefabInstance: {fileID: 643320126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &470554585
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470554572}
+  m_Enabled: 1
 --- !u!1001 &553728693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1375,6 +1399,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 697110149864951948, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2248906671184525422, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: nextSceneName
@@ -1384,6 +1413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: character
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697133024291828955, guid: 8e6b218e24db2b74aabd4a909d84c742,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
@@ -3309,7 +3343,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1753069268}
   - component: {fileID: 1753069267}
-  - component: {fileID: 1753069266}
   - component: {fileID: 1753069269}
   - component: {fileID: 1753069270}
   m_Layer: 0
@@ -3319,14 +3352,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1753069266
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753069265}
-  m_Enabled: 1
 --- !u!20 &1753069267
 Camera:
   m_ObjectHideFlags: 0

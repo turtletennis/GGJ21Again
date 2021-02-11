@@ -76,7 +76,10 @@ using UnityEngine;
             PlaySFXPlayer(mainJumpSounds , beachJumpSounds , jumpPitchMin , jumpPitchMax , jumpDoNotRepeat , ifSand);
         }
 
-       
+        public void PlayCoinCollectSound()
+        {
+            Debug.Log("Add Coin Sound");
+        }
         public void PlayDoubleJumpSound()
         {
             if (dBLJumpSounds.Length < 1)

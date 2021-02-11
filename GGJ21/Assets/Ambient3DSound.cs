@@ -6,17 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Ambient3DSound : MonoBehaviour
 {
-    private AudioSource soundEmitter = null;
+    [SerializeField] GameObject character;
+    private AudioSource soundEmitterA = null;
+
+    [SerializeField] AudioClip sFXToPlayA = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (soundEmitter == null)
-        {
-            return;
-        }
+       
 
-        soundEmitter = GetComponent<AudioSource>();
+        soundEmitterA = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +27,26 @@ public class Ambient3DSound : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TriggerEnter");
-    }
+        //if(other.gameObject == character)
+        //{
 
+            if (soundEmitterA.isPlaying)
+            {
+                return;
+            }
+
+            soundEmitterA.loop = true;
+            soundEmitterA.clip = sFXToPlayA;
+            soundEmitterA.Play();
+
+            Debug.Log("TE");
+        //}
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        soundEmitterA.Stop();
+        //}
+    }
 }
+
+
