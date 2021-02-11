@@ -1190,6 +1190,7 @@ MonoBehaviour:
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
   CoinCollectSound: {fileID: 8300000, guid: 7de271a924fff4b4180bd8ede69f260f, type: 3}
+  LevelEndSound: {fileID: 8300000, guid: 6eda67a173a7fe54eaa0e11adcb3d027, type: 3}
 --- !u!114 &2248906671184525422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1558,7 @@ MonoBehaviour:
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
   CoinCollectSound: {fileID: 0}
+  LevelEndSound: {fileID: 0}
 --- !u!1 &3587386160694771839
 GameObject:
   m_ObjectHideFlags: 0
