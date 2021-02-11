@@ -9,7 +9,7 @@ using UnityEngine;
     public class playerSounds : MonoBehaviour
     {
 
-        [SerializeField] bool ifSand = false;
+       public bool ifSand = false;
 
         [SerializeField] AudioClip[] beachFoosteps = null;
         [SerializeField] AudioClip[] mainFootSteps = null;
