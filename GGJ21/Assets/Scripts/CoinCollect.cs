@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CoinCollect : MonoBehaviour
 {
-    playerSounds playerSounds;
+    [SerializeField] GameSFX gameSFX;
     // Start is called before the first frame update
     void Start()
     {
-        playerSounds = GetComponent<playerSounds>();
+        gameSFX = FindObjectOfType<GameSFX>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class CoinCollect : MonoBehaviour
         if (other.gameObject.CompareTag("coin"))
         {
             GameObject.Destroy(other.gameObject);
-            playerSounds.PlayCoinCollectSound();
+            gameSFX.PlayGameSFX("Coin");
         }
     }
 }
