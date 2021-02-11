@@ -16,9 +16,11 @@ public class CanvasScript : MonoBehaviour
     private Rect rect;
     private readonly float DEFAULT_X = 100f;
     public static int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
+    
     private string nextScene;
     private bool deathFade = false;
     public GameObject pauseScreen=null;
+    
 
     void Start()
     {
@@ -27,10 +29,17 @@ public class CanvasScript : MonoBehaviour
         rt = image.gameObject.GetComponent<RectTransform>();
         rect = rt.rect;
 
-
         //UnityEngine.Object pauseMenu = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PauseScreen.prefab", typeof(GameObject));
         GameObject.Instantiate(pauseScreen, gameObject.transform);
     }
+
+    public Text ScoreText;
+
+    public void SetScoreText(int score)
+    {
+        ScoreText.text = "Score: " + score;
+    }
+
 
     void Update()
     {

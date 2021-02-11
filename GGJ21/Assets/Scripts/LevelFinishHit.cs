@@ -10,13 +10,16 @@ public class LevelFinishHit : MonoBehaviour
     AnimationStateController animationStateController;
     public string nextSceneName;
     private bool hasFinishedLevel = false;
-
+    private ScoreTracker scoreTracker;
+    [SerializeField]
+    int levelFinishScoreValue = 100;
     void Start()
     {
         cs = GameObject.Find("Canvas").GetComponent<CanvasScript>();
         nonPlayerSounds = GetComponent<NonPlayerSounds>();
         playerMovement = GetComponent<PlayerMovement>();
         animationStateController= GetComponent<AnimationStateController>();
+        scoreTracker = GetComponent<ScoreTracker>();
     }
 
     void Update()
@@ -34,6 +37,7 @@ public class LevelFinishHit : MonoBehaviour
             }
             //remove double-jump ability if set
             hasFinishedLevel = true;
+            scoreTracker.AddScore(levelFinishScoreValue);
             PlayerMovement.jumps = 1;
             nonPlayerSounds.PlayLevelEndSound();
             StartCoroutine(LevelFinish());
