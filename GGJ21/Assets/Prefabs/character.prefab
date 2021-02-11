@@ -930,7 +930,8 @@ AudioSource:
   m_GameObject: {fileID: 2697133024291828955}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6135369256621235848, guid: a65e3c42d896be9489540479ce351dea,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1392,7 +1393,7 @@ GameObject:
   - component: {fileID: 6787195978700225869}
   - component: {fileID: 3166784388702575000}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlayerSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1421,7 +1422,8 @@ AudioSource:
   m_GameObject: {fileID: 3563487555458940700}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6135369256621235848, guid: a65e3c42d896be9489540479ce351dea,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

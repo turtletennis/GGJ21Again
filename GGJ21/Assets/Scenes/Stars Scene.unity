@@ -711,93 +711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: MaxDistance
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: MinDistance
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 539f48bfedc1e30409c9d039bc15e93a, type: 3}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
-      value: 0.4989084
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
-      value: 0.3724526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
-      value: -2.5397081
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
-      value: -0.3726013
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
-      value: -2.5397081
-      objectReference: {fileID: 0}
-    - target: {fileID: 1832425662, guid: 82312e40e9e2f704f957c45fd25f7666, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
-      value: -0.3726013
-      objectReference: {fileID: 0}
     - target: {fileID: 2315207838173897601, guid: 82312e40e9e2f704f957c45fd25f7666,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315207838173897601, guid: 82312e40e9e2f704f957c45fd25f7666,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315207838173897601, guid: 82312e40e9e2f704f957c45fd25f7666,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315207838173897601, guid: 82312e40e9e2f704f957c45fd25f7666,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2315207838173897601, guid: 82312e40e9e2f704f957c45fd25f7666,
         type: 3}
@@ -853,16 +770,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: poison puddle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936237044188846183, guid: 82312e40e9e2f704f957c45fd25f7666,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5924136301434691767, guid: 82312e40e9e2f704f957c45fd25f7666,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6593386267802557231, guid: 82312e40e9e2f704f957c45fd25f7666,
         type: 3}
@@ -1117,6 +1024,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 919011537, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2716758375254256976, guid: a65e3c42d896be9489540479ce351dea,
+        type: 2}
     - target: {fileID: 2940887838794106616, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}
       propertyPath: m_RootOrder
@@ -1177,6 +1089,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4609048733063255747, guid: a65e3c42d896be9489540479ce351dea,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
 --- !u!4 &442228520 stripped
@@ -1597,7 +1520,6 @@ GameObject:
   m_Component:
   - component: {fileID: 554893955}
   - component: {fileID: 554893954}
-  - component: {fileID: 554893953}
   - component: {fileID: 554893956}
   - component: {fileID: 554893957}
   m_Layer: 0
@@ -1607,14 +1529,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &554893953
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554893952}
-  m_Enabled: 1
 --- !u!20 &554893954
 Camera:
   m_ObjectHideFlags: 0
@@ -2524,16 +2438,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: character
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003705117393917568, guid: 8e6b218e24db2b74aabd4a909d84c742,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003705117393917571, guid: 8e6b218e24db2b74aabd4a909d84c742,
-        type: 3}
-      propertyPath: ifSand
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
