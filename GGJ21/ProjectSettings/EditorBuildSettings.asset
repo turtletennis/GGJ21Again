@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stars Scene.unity
     guid: 55e176730d36b8c4faa9b886068f8a95
+  - enabled: 1
+    path: Assets/Scenes/Teen Room.unity
+    guid: 66bbc244691548e43886a6d56275572b
   m_configObjects: {}
