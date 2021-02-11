@@ -6,18 +6,17 @@ using UnityEngine;
 public class AmbienceManager : MonoBehaviour
 {
     private AudioSource ambienceSoundEmitter;
-    [SerializeField] AudioClip ambienceSFXLoop;
-    [SerializeField] string Level = "PlayRoom";
+    [SerializeField] AudioClip ambienceSFXLoop = null;
+    
     // Start is called before the first frame update
     void Start()
     {
         ambienceSoundEmitter = GetComponent<AudioSource>();
-        if (Level == "Beach")
-        {
+        
             ambienceSoundEmitter.loop = true;
             ambienceSoundEmitter.clip = ambienceSFXLoop;
             ambienceSoundEmitter.Play();
-        }
+        
     }
 
     // Update is called once per frame

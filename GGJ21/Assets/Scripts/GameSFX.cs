@@ -6,7 +6,7 @@ using UnityEditor.Audio;
 public class GameSFX : MonoBehaviour
 {
     private AudioSource GameSFXAudioEmitter;
-    [SerializeField] AudioClip coinSound;
+    [SerializeField] AudioClip coinSound = null;
 
 
     // Start is called before the first frame update
@@ -22,9 +22,13 @@ public class GameSFX : MonoBehaviour
     }
     public void PlayGameSFX(string _name)
     {
+        
+
+        if(coinSound == null) { return; }
+
         if (_name == "Coin" || _name == "coin")
         {
-            GameSFXAudioEmitter.PlayOneShot(coinSound);
+            GameSFXAudioEmitter.PlayOneShot(coinSound , 0.4f);
         }
 
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinCollect : MonoBehaviour
 {
-    [SerializeField] GameSFX gameSFX;
+    private GameSFX gameSFX;
     // Start is called before the first frame update
     void Start()
     {

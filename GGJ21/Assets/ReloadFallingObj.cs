@@ -8,15 +8,15 @@ public class ReloadFallingObj : MonoBehaviour
 {
     private Vector3 respawnPosition;
     [SerializeField] Quaternion respawnRotation;
- 
-    public GameObject blockPrefab;
+
+    public GameObject blockPrefab = null;
 
     //public GameObject playerPefab;
 
     [SerializeField] Vector3 respawnPlayerPosition;
     [SerializeField] Quaternion respawnPlayerRotation;
 
-    [SerializeField] GameObject playereRespawnPosition;
+    [SerializeField] GameObject playereRespawnPosition = null;
     //[SerializeField] Quaternion respawnRotation;
 
     private AudioSource soundEmitter;

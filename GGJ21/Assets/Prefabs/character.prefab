@@ -790,6 +790,7 @@ GameObject:
   - component: {fileID: 2248906671184525422}
   - component: {fileID: 697110149864951948}
   - component: {fileID: 2086180676442538574}
+  - component: {fileID: 8147199202707308216}
   m_Layer: 0
   m_Name: character
   m_TagString: Respawn
@@ -1158,8 +1159,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c911aa55dd932d4f82f3ea43fbc9644, type: 3}
   - {fileID: 8300000, guid: 416f24920c69b0441b3587c36288785f, type: 3}
   - {fileID: 8300000, guid: 4b88829cae0893847a6648a03685f97e, type: 3}
-  fsPitchMin: 1
-  fsPitchMax: 1
+  fsPitchMin: 0.9
+  fsPitchMax: 1.1
   fsDoNotRepeat: 1
   fsVolume: 0.2
   beachJumpSounds:
@@ -1187,9 +1188,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3dc936d4a721ecc4f93c92a2f112c471, type: 3}
   landingPitchMin: 1
   landingPitchMax: 1
-  landingDoNotRepeat: 0
+  landingDoNotRepeat: 1
   playerSoundsDebug: 0
-  CoinCollectSound: {fileID: 8300000, guid: 7de271a924fff4b4180bd8ede69f260f, type: 3}
 --- !u!114 &2248906671184525422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25d322d6b479954291594a01e7a6dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
+  nextSceneName: Stars Scene
 --- !u!82 &697110149864951948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1311,6 +1311,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994133ffe9ea15b44988e871a2ce078d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &8147199202707308216
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1564,6 @@ MonoBehaviour:
   landingPitchMax: 1
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
-  CoinCollectSound: {fileID: 0}
 --- !u!1 &3587386160694771839
 GameObject:
   m_ObjectHideFlags: 0
