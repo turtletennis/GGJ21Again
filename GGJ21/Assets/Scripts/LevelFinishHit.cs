@@ -20,7 +20,8 @@ public class LevelFinishHit : MonoBehaviour
     {
         if (other.gameObject.CompareTag("LevelEnd"))
         {
-            
+            //remove double-jump ability if set
+            PlayerMovement.jumps = 1;
             SceneManager.LoadScene(nextSceneName);
             //Update this when we get a death animation
         }
