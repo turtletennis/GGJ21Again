@@ -6,6 +6,7 @@ public class IsSandyTriggerEnter : MonoBehaviour
 {
     public GameObject character;
     private playerSounds characterPlayerSounds;
+    public bool makeTransitionOnEnterSandy;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +22,40 @@ public class IsSandyTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Respawn"))
+        if(makeTransitionOnEnterSandy == true)
         {
-        characterPlayerSounds.ifSand = false;
+            if (other.CompareTag("Respawn"))
+            {
+                characterPlayerSounds.ifSand = true;
+            }
+
+        }
+        else
+        {
+            if (other.CompareTag("Respawn"))
+            {
+                characterPlayerSounds.ifSand = false;
+            }
         }
         
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Respawn"))
+        if (makeTransitionOnEnterSandy == true)
         {
-            characterPlayerSounds.ifSand = true;
+            if (other.CompareTag("Respawn"))
+            {
+                characterPlayerSounds.ifSand = false;
             }
+
+        }
+        else
+        {
+            if (other.CompareTag("Respawn"))
+            {
+                characterPlayerSounds.ifSand = true;
+            }
+        }
     }
 }
