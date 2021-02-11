@@ -1024,6 +1024,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 376034952, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
+      propertyPath: ambienceSFXLoop
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a4371c8c084a134bba4436d933dff97, type: 3}
     - target: {fileID: 919011537, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -1088,6 +1092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}

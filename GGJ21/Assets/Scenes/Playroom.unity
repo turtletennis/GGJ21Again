@@ -333,6 +333,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 376034952, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
+      propertyPath: ambienceSFXLoop
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919011537, guid: 1e948c01b7736466f8eb82e218869023, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -401,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}
       propertyPath: m_Volume
-      value: 0.274
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7469332449887075710, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}
@@ -461,7 +465,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60434733}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3d60d63a7fc8d441bb26d356cb837bf5, type: 3}
