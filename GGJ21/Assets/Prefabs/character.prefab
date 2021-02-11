@@ -790,6 +790,7 @@ GameObject:
   - component: {fileID: 2248906671184525422}
   - component: {fileID: 697110149864951948}
   - component: {fileID: 2086180676442538574}
+  - component: {fileID: 470554585}
   m_Layer: 0
   m_Name: character
   m_TagString: Respawn
@@ -1145,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d590201ad7e47a6a05e4cd517b4f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ifSand: 0
+  ifSand: 1
   beachFoosteps:
   - {fileID: 8300000, guid: 0410031717253e046b76ade8f1f631f4, type: 3}
   - {fileID: 8300000, guid: 80682ff1e296ef64085d831e57c013e1, type: 3}
@@ -1161,7 +1162,6 @@ MonoBehaviour:
   fsPitchMin: 1
   fsPitchMax: 1
   fsDoNotRepeat: 1
-  fsVolume: 0.2
   beachJumpSounds:
   - {fileID: 8300000, guid: 7895e28118754c84e80beeef4fe8f7be, type: 3}
   - {fileID: 8300000, guid: dc104698caf59e14bb79b0bc17d97ad6, type: 3}
@@ -1189,7 +1189,6 @@ MonoBehaviour:
   landingPitchMax: 1
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
-  CoinCollectSound: {fileID: 8300000, guid: 7de271a924fff4b4180bd8ede69f260f, type: 3}
 --- !u!114 &2248906671184525422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,7 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25d322d6b479954291594a01e7a6dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
+  nextSceneName: Stars Scene
 --- !u!82 &697110149864951948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1214,7 +1213,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1311,6 +1310,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994133ffe9ea15b44988e871a2ce078d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSFX: {fileID: 0}
+--- !u!81 &470554585
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1536,6 @@ MonoBehaviour:
   fsPitchMin: 1
   fsPitchMax: 1
   fsDoNotRepeat: 1
-  fsVolume: 0.2
   beachJumpSounds:
   - {fileID: 8300000, guid: 7895e28118754c84e80beeef4fe8f7be, type: 3}
   - {fileID: 8300000, guid: dc104698caf59e14bb79b0bc17d97ad6, type: 3}
@@ -1556,7 +1563,6 @@ MonoBehaviour:
   landingPitchMax: 1
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
-  CoinCollectSound: {fileID: 0}
 --- !u!1 &3587386160694771839
 GameObject:
   m_ObjectHideFlags: 0
