@@ -39,7 +39,6 @@ public class LevelFinishHit : MonoBehaviour
                 nonPlayerSounds = GetComponent<NonPlayerSounds>();
             }
             //remove double-jump ability if set
-            musicManager.StopMusic();
             hasFinishedLevel = true;
             scoreTracker.AddScore(levelFinishScoreValue);
             PlayerMovement.jumps = 1;

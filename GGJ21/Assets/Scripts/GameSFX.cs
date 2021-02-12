@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor.Audio;
+﻿using UnityEngine;
+
 
 public class GameSFX : MonoBehaviour
 {
