@@ -53,9 +53,6 @@ public class playerSounds : MonoBehaviour
 
 
 
-    [SerializeField]
-    AudioClip LevelEndSound = null;
-
     private AudioSource soundEmitter;
     private int lastArrayPosition = 0;
 
@@ -108,16 +105,6 @@ public class playerSounds : MonoBehaviour
     {
         PlaySFXPlayer(mainLandingSounds, beachLandingSounds, landingPitchMin, landingPitchMax, landingDoNotRepeat, ifSand);
 
-    }
-
-
-
-
-
-    public void PlayLevelEndSound()
-    {
-        soundEmitter.pitch = 1.0f;
-        soundEmitter.PlayOneShot(LevelEndSound);
     }
 
     private void RadomizePitch(float PitchMin, float PitchMax)
