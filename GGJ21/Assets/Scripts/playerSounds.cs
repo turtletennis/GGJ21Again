@@ -8,8 +8,7 @@ using UnityEngine;
 
 public class playerSounds : MonoBehaviour
 {
-
-    [SerializeField] bool ifSand = false;
+    public bool ifSand = false;
 
     [SerializeField] AudioClip[] beachFoosteps = null;
     [SerializeField] AudioClip[] mainFootSteps = null;
@@ -52,8 +51,8 @@ public class playerSounds : MonoBehaviour
     [SerializeField]
     bool playerSoundsDebug = false;
 
-    [SerializeField]
-    AudioClip CoinCollectSound = null;
+    
+    
     [SerializeField]
     AudioClip LevelEndSound = null;
 
@@ -111,17 +110,14 @@ public class playerSounds : MonoBehaviour
 
     }
 
-    public void PlayCoinCollectSound()
-    {
-        soundEmitter.pitch = 1.0f;
-        soundEmitter.PlayOneShot(CoinCollectSound);
+    
+    
     }
 
     public void PlayLevelEndSound()
     {
         soundEmitter.pitch = 1.0f;
         soundEmitter.PlayOneShot(LevelEndSound);
-    }
 
     private void RadomizePitch(float PitchMin, float PitchMax)
     {
