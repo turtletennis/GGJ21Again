@@ -26,8 +26,8 @@ public class ReloadFallingObj : MonoBehaviour
     void Start()
     {
         soundEmitter = GetComponent<AudioSource>();
-        respawnPosition = playereRespawnPosition.transform.position;
-        respawnRotation = playereRespawnPosition.transform.rotation;
+        //respawnPosition = playereRespawnPosition.transform.position;
+        //respawnRotation = playereRespawnPosition.transform.rotation;
     }
 
     // Update is called once per fram
