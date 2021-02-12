@@ -791,6 +791,8 @@ GameObject:
   - component: {fileID: 697110149864951948}
   - component: {fileID: 2086180676442538574}
   - component: {fileID: 8147199202707308216}
+  - component: {fileID: 5542164066171148840}
+  - component: {fileID: 6133622986812970136}
   m_Layer: 0
   m_Name: character
   m_TagString: Respawn
@@ -1190,7 +1192,6 @@ MonoBehaviour:
   landingPitchMax: 1
   landingDoNotRepeat: 1
   playerSoundsDebug: 0
-  LevelEndSound: {fileID: 8300000, guid: 6eda67a173a7fe54eaa0e11adcb3d027, type: 3}
 --- !u!114 &2248906671184525422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Stars Scene
+  levelFinishScoreValue: 100
 --- !u!82 &697110149864951948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1312,6 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994133ffe9ea15b44988e871a2ce078d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinScoreValue: 10
 --- !u!81 &8147199202707308216
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1320,6 +1323,32 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2697133024291828955}
   m_Enabled: 1
+--- !u!114 &5542164066171148840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba917d75e735484d8fa6930ae6be855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6133622986812970136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf4176bd9b8d554e96adbe6c131526b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinCollectSound: {fileID: 8300000, guid: 7de271a924fff4b4180bd8ede69f260f, type: 3}
+  LevelEndSound: {fileID: 8300000, guid: 6eda67a173a7fe54eaa0e11adcb3d027, type: 3}
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1594,6 @@ MonoBehaviour:
   landingPitchMax: 1
   landingDoNotRepeat: 0
   playerSoundsDebug: 0
-  LevelEndSound: {fileID: 0}
 --- !u!1 &3587386160694771839
 GameObject:
   m_ObjectHideFlags: 0
