@@ -51,8 +51,8 @@ public class playerSounds : MonoBehaviour
     [SerializeField]
     bool playerSoundsDebug = false;
 
-    
-    
+
+
     [SerializeField]
     AudioClip LevelEndSound = null;
 
@@ -110,14 +110,15 @@ public class playerSounds : MonoBehaviour
 
     }
 
-    
-    
-    }
+
+
+
 
     public void PlayLevelEndSound()
     {
         soundEmitter.pitch = 1.0f;
         soundEmitter.PlayOneShot(LevelEndSound);
+    }
 
     private void RadomizePitch(float PitchMin, float PitchMax)
     {
