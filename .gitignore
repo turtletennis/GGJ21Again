@@ -68,3 +68,4 @@ crashlytics-build.properties
 *.painter_lock
 *.blend1
 *.blend2
+/GGJ21/Discovery/

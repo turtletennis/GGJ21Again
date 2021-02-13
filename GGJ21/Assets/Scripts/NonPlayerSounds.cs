@@ -13,7 +13,7 @@ public class NonPlayerSounds : MonoBehaviour
     [SerializeField]
     AudioClip LevelEndSound = null;
     AudioSource soundEmitter;
-    private int lastArrayPosition = 0;
+    //private int lastArrayPosition = 0;
 
 
     void Start()

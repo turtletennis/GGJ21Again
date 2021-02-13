@@ -55,6 +55,7 @@ public class LevelFinishHit : MonoBehaviour
         
         yield return new WaitWhile(() => nonPlayerSounds.IsSoundPlaying());
         SceneManager.LoadScene(nextSceneName);
+        musicManager.StopMusic();
         hasFinishedLevel = false;
     }
 
