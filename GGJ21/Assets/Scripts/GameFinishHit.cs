@@ -41,6 +41,7 @@ public class GameFinishHit : MonoBehaviour
             //StartCoroutine(LevelFinish());
             SceneManager.LoadScene(startSceneName);
             musicManager.StopMusic();
+            scoreTracker.ResetScoreToZero();
             hasFinishedLevel = false;
 
 
