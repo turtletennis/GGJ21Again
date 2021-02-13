@@ -793,6 +793,7 @@ GameObject:
   - component: {fileID: 8147199202707308216}
   - component: {fileID: 5542164066171148840}
   - component: {fileID: 6133622986812970136}
+  - component: {fileID: 6942632116741296828}
   m_Layer: 0
   m_Name: character
   m_TagString: Respawn
@@ -1349,6 +1350,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoinCollectSound: {fileID: 8300000, guid: 7de271a924fff4b4180bd8ede69f260f, type: 3}
   LevelEndSound: {fileID: 8300000, guid: 6eda67a173a7fe54eaa0e11adcb3d027, type: 3}
+--- !u!114 &6942632116741296828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697133024291828955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b314a8c7ed4d2d41b643b8fd4514f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSceneName: Playroom
 --- !u!1 &2763970869374566300
 GameObject:
   m_ObjectHideFlags: 0

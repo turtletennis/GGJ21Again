@@ -11,6 +11,8 @@ TagManager:
   - respawnPlayer
   - LevelEnd
   - coin
+  - GameEnd
+  - Restart
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,12 @@ public class ScoreTracker : MonoBehaviour
         score += diff;
         cs.SetScoreText(score);
     }
+
+    public void ResetScoreToZero()
+    {
+        score = 0;
+        cs.SetScoreText(score);
+    }
     // Update is called once per frame
     void Update()
     {

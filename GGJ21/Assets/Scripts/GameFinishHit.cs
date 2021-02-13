@@ -2,26 +2,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelFinishHit : MonoBehaviour
+public class GameFinishHit : MonoBehaviour
 {
     private CanvasScript cs;
     GameSFX gameSFX;
-    PlayerMovement playerMovement;
-    AnimationStateController animationStateController;
-    public string nextSceneName;
+    public string startSceneName;
     private MusicManager2 musicManager;
     
     private bool hasFinishedLevel = false;
     private ScoreTracker scoreTracker;
-    [SerializeField]
-    int levelFinishScoreValue = 100;
+    
     void Start()
     {
         cs = GameObject.Find("Canvas").GetComponent<CanvasScript>();
         gameSFX = FindObjectOfType<GameSFX>();
         musicManager = FindObjectOfType<MusicManager2>();
-        playerMovement = GetComponent<PlayerMovement>();
-        animationStateController= GetComponent<AnimationStateController>();
         scoreTracker = GetComponent<ScoreTracker>();
     }
 
@@ -32,7 +27,7 @@ public class LevelFinishHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("LevelEnd") && !hasFinishedLevel)
+        if (other.gameObject.CompareTag("Restart") && !hasFinishedLevel)
         {
             if (gameSFX == null)
             {
@@ -40,16 +35,20 @@ public class LevelFinishHit : MonoBehaviour
             }
             //remove double-jump ability if set
             hasFinishedLevel = true;
-            scoreTracker.AddScore(levelFinishScoreValue);
+            
             PlayerMovement.jumps = 1;
             gameSFX?.PlayGameSFX("LevelEnd");
             //StartCoroutine(LevelFinish());
-            SceneManager.LoadScene(nextSceneName);
-            musicManager?.StopMusic();
+            SceneManager.LoadScene(startSceneName);
+            musicManager.StopMusic();
             hasFinishedLevel = false;
 
 
             //Update this when we get a death animation
+        }else if (other.gameObject.CompareTag("GameEnd") && !hasFinishedLevel)
+        {
+            
+            Application.Quit();
         }
     }
 
