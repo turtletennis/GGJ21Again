@@ -6324,24 +6324,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0932a229918a9dd4ead6639e1c3b8703, type: 3}
---- !u!1 &257106973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2940887838794106617, guid: 1e948c01b7736466f8eb82e218869023,
-    type: 3}
-  m_PrefabInstance: {fileID: 1454703858}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &257106975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257106973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fad45f20ee97144b8cc955e1a27032b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &265433729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 822946047902966210, guid: d04c6feddfc898940a6b6e9ff1be7d02,
@@ -10525,24 +10507,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04c6feddfc898940a6b6e9ff1be7d02, type: 3}
---- !u!1 &1216656284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8125227352594135523, guid: 1e948c01b7736466f8eb82e218869023,
-    type: 3}
-  m_PrefabInstance: {fileID: 1454703858}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1216656286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216656284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4860f2087758b28429c54b7cf1138ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1221461361
 GameObject:
   m_ObjectHideFlags: 0
@@ -11773,10 +11737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6298883665109910305, guid: 1e948c01b7736466f8eb82e218869023,
+    - target: {fileID: 2940887838794106617, guid: 1e948c01b7736466f8eb82e218869023,
         type: 3}
-      propertyPath: ambienceSFXLoop
-      value: 
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e948c01b7736466f8eb82e218869023, type: 3}

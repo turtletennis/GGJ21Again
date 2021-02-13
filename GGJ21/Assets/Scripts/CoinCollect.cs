@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinCollect : MonoBehaviour
 {
-    NonPlayerSounds nonPlayerSounds;
+    private GameSFX gameSFX;
     private CanvasScript canvas;
     private ScoreTracker scoreTracker;
     [SerializeField]
@@ -12,7 +12,7 @@ public class CoinCollect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nonPlayerSounds = GetComponent<NonPlayerSounds>();
+        gameSFX = FindObjectOfType<GameSFX>();
         canvas = GameObject.Find("Canvas").GetComponent<CanvasScript>();
         scoreTracker = GetComponent<ScoreTracker>();
     }
@@ -30,7 +30,7 @@ public class CoinCollect : MonoBehaviour
         {
             scoreTracker.AddScore(coinScoreValue);
             GameObject.Destroy(other.gameObject);
-            nonPlayerSounds.PlayCoinCollectSound();
+            gameSFX.PlayGameSFX("coin");
         }
     }
 }

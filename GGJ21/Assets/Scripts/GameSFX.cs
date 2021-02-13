@@ -5,6 +5,7 @@ public class GameSFX : MonoBehaviour
 {
     private AudioSource GameSFXAudioEmitter;
     [SerializeField] AudioClip coinSound = null;
+    [SerializeField] AudioClip levelEnd = null;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,14 @@ public class GameSFX : MonoBehaviour
         {
             GameSFXAudioEmitter.PlayOneShot(coinSound , 0.4f);
         }
+
+        if (_name == "LevelEnd" || _name == "levelEnd")
+        {
+            GameSFXAudioEmitter.PlayOneShot(levelEnd, 0.4f);
+        }
+
+
+
 
     }
 }

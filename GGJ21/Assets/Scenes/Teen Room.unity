@@ -200,7 +200,6 @@ GameObject:
   m_Component:
   - component: {fileID: 111744796}
   - component: {fileID: 111744795}
-  - component: {fileID: 111744794}
   - component: {fileID: 111744793}
   - component: {fileID: 111744792}
   m_Layer: 0
@@ -258,14 +257,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1778998338}
   zoom: 3
---- !u!81 &111744794
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111744791}
-  m_Enabled: 1
 --- !u!20 &111744795
 Camera:
   m_ObjectHideFlags: 0
@@ -1475,7 +1466,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.45
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

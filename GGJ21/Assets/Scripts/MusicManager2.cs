@@ -25,6 +25,8 @@ class MusicManager2 : MonoBehaviour
 
     public void StartMusicOnLevelLoad(AudioClip _audioClip)
     {
+        //.
+        if (_audioClip == null) { return; }
         musicEmitter.loop = true;
         musicEmitter.clip = _audioClip;
         musicEmitter.Play();
