@@ -26,7 +26,7 @@ public class NightmareHit : MonoBehaviour
         {
 
             scoreTracker.ResetScoreToLevelStart();
-            musicManager.StopMusic();
+            musicManager?.StopMusic();
             cs.playDeathFade();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //Update this when we get a death animation

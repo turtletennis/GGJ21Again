@@ -14,8 +14,11 @@ public class CanvasScript : MonoBehaviour
     private Image image;
     private RectTransform rt;
     private Rect rect;
-    private readonly float DEFAULT_X = 100f;
+    private float DEFAULT_X = 100f;
+    private float windowWidth = 1920f;
+    private float windowHeight = 1080f;
     public static int memoryCycle = 0; //0 = inactive, 1 = fade in, 2 = wait, 3 = fade out
+    
     
     private string nextScene;
     private bool deathFade = false;
@@ -29,6 +32,7 @@ public class CanvasScript : MonoBehaviour
         rt = image.gameObject.GetComponent<RectTransform>();
         rect = rt.rect;
 
+        DEFAULT_X = (float) (0 - image.preferredWidth / 2.0);
         //UnityEngine.Object pauseMenu = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/PauseScreen.prefab", typeof(GameObject));
         GameObject.Instantiate(pauseScreen, gameObject.transform);
     }
@@ -85,7 +89,12 @@ public class CanvasScript : MonoBehaviour
                     memoryCycle = 2;
                 }
                 image.color = c;
-                rt.anchoredPosition = new Vector2(DEFAULT_X, (1 - c.a) * -100);
+                //update window width if the camera is available (sometimes it's null)
+                windowWidth = Camera.current?.pixelRect.width ?? windowWidth;
+                windowHeight = Camera.current?.pixelRect.height ?? windowHeight;
+
+                float x = (float) (0 - image.preferredWidth/2.0);
+                rt.anchoredPosition = new Vector2(x, windowHeight/2.0f+ (1 - c.a) * -image.preferredHeight);
             }
         }
         else if (memoryCycle == 2)

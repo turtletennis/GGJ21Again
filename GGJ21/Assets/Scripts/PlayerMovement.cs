@@ -86,6 +86,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 addDoubleJump();
             }
+            else if(isJumpReady)
+            {
+                Debug.Log("Not grounded!");
+            }
         }
 
         //Reset jump key to allow double jumps
