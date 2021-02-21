@@ -8,6 +8,7 @@ public class Abilities : MonoBehaviour
     {
         NULL,
         DOUBLE_JUMP,
+        MEGA_JUMP,
         UNHIDE
     }
 
@@ -52,6 +53,10 @@ public class Abilities : MonoBehaviour
                 break;
             case Ability.UNHIDE:
                 unhideFound = true;
+                break;
+            case Ability.MEGA_JUMP:
+                PlayerMovement.jumps = 2;
+                PlayerMovement.boostJump = true;
                 break;
         }
     }

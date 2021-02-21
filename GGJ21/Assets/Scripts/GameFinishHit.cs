@@ -36,7 +36,7 @@ public class GameFinishHit : MonoBehaviour
             //remove double-jump ability if set
             hasFinishedLevel = true;
             
-            PlayerMovement.jumps = 1;
+            PlayerMovement.ResetPowers();
             gameSFX?.PlayGameSFX("LevelEnd");
             //StartCoroutine(LevelFinish());
             SceneManager.LoadScene(startSceneName);

@@ -10,8 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
     public float jumpPower;
+    public static bool boostJump = false;
+    public static float boostJumpMultiplier = 1.5f;
     public float gravity;
     public static int jumps = 1;
+    
     public static bool active = true;
     private bool facingRight = true; //This will indicate the char is facing right
     public float flipRotationSpeeed = 0.2f;
@@ -27,7 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
     private playerSounds playerSounds;
 
-
+    public static void ResetPowers()
+    {
+        jumps = 1;
+        boostJump = false;
+    }
 
     void Start()
     {
@@ -102,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
     public void addJump()
     {
         if (!controller.isGrounded) return;
-        yVelocity = jumpPower;
+        yVelocity = jumpPower * (boostJump ? boostJumpMultiplier:1);
         playerSounds.PlayJumpSound();
         //playAnimation("metarig|jump");
     }
@@ -110,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
     //I'm assuming this was added so that a seperate animation can be used for jumping in midair
     public void addDoubleJump()
     {
-        yVelocity = jumpPower;
+        yVelocity = jumpPower * (boostJump ? boostJumpMultiplier : 1);
         jumpsLeft--; //jumpsLeft refers to midair jumps
         playerSounds.PlayJumpSound();
     }
