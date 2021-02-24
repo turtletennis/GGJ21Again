@@ -870,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpPower: 25
-  gravity: 1
+  gravity: 100
   flipRotationSpeeed: 0.2
   lerpFlipRotation: 1
   animator: {fileID: 0}

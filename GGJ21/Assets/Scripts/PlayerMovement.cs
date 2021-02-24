@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!controller.isGrounded)
         {
-            yVelocity -= gravity*Time.deltaTime*100;
+            yVelocity -= gravity*Time.deltaTime;
         }
         else
         {
