@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1179943803}
-  zoom: 10
+  zoom: 20
 --- !u!20 &1987117816
 Camera:
   m_ObjectHideFlags: 0
