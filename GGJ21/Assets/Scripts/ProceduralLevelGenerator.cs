@@ -13,6 +13,10 @@ public class ProceduralLevelGenerator : MonoBehaviour
     [SerializeField]
     GameObject Block;
     [SerializeField]
+    GameObject HorizontalCellWall;
+    [SerializeField]
+    GameObject VerticalCellWall;
+    [SerializeField]
     GameObject WinZone;
     public float BlockWidth;
     public float BlockHeight;
@@ -35,6 +39,8 @@ public class ProceduralLevelGenerator : MonoBehaviour
     [SerializeField]
     int MaxFallDepth = 5;
     int JumpDistance = 4;
+    private float playerStartX;
+    private float playerStartY;
     private List<List<int>> grid;
     private List<List<bool>> sectionGrid;
     private List<List<bool>> sectionWallsHorizontal;
@@ -61,6 +67,8 @@ public class ProceduralLevelGenerator : MonoBehaviour
         var rand = new System.Random();
         InitialiseGrids();
         GenerateCells(rand);
+        InstantiateSectionWalls();
+        
         int xPos = 0;
         int yPos = GridHeight / 2;
         for (int i = 0; i < GridWidth; i++)
@@ -105,7 +113,7 @@ public class ProceduralLevelGenerator : MonoBehaviour
         }
         float winyPosition = (yPos - GridHeight / 2 - 0.5f) * BlockHeight / 2;
         Instantiate(WinZone, new Vector3((xPos - 1) * BlockWidth, winyPosition, 0), Quaternion.identity);
-
+        MovePlayerToStartPosition();
         for (int x = 1; x < GridWidth; x++)
         {
             for (int y = 0; y < GridHeight; y++)
@@ -117,6 +125,14 @@ public class ProceduralLevelGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void MovePlayerToStartPosition()
+    {
+        var player = FindObjectOfType<CharacterController>();
+        var currentPos = player.transform.position;
+        player.transform.position = new Vector3(playerStartX, playerStartY, currentPos.z);
+        
     }
 
     private Direction? Opposite(Direction direction)
@@ -136,12 +152,42 @@ public class ProceduralLevelGenerator : MonoBehaviour
         }
     }
 
+    private int vWallHeight = 8;
+    private int hWallWidth = 8;
+    private float wallThickness = 0.5f;
+    private void InstantiateSectionWalls()
+    {
+        for (int y = 0; y <= SectionGridHeight; y++)
+        {
+            for (int x = 0; x <= SectionGridWidth; x++)
+            {
+                if (y < SectionGridHeight)
+                {
+                    if (sectionWallsVertical[x][y])
+                    {
+                        Instantiate(VerticalCellWall, new Vector3( (x-0.5f) * hWallWidth, (y+0.5f) * vWallHeight - wallThickness, 0), Quaternion.identity);
+                    }
+
+                }
+                if (x < SectionGridWidth)
+                {
+                    if (sectionWallsHorizontal[x][y])
+                    {
+                        Instantiate(HorizontalCellWall, new Vector3((x) * hWallWidth + wallThickness / 2.0f, y * vWallHeight - wallThickness/2.0f, 0), Quaternion.identity);
+                    }
+                }
+            }
+        }
+    }
+
     private void GenerateCells(System.Random rand)
     {
         List<Direction> pathTaken = new List<Direction>();
         int xPos = rand.Next(SectionGridWidth / 4);
         int yPos = rand.Next(SectionGridHeight);
-        string path = $"{xPos},{yPos}";
+        playerStartX = xPos*hWallWidth;
+        playerStartY = yPos*vWallHeight;
+        string path = $"{xPos},{yPos}\n";
         sectionGrid[xPos][yPos] = true;
         bool endLevel = false;
         Direction? previousDirection = null;
@@ -186,32 +232,45 @@ public class ProceduralLevelGenerator : MonoBehaviour
 
             if (direction == Direction.Right && xPos >= SectionGridWidth - 1)
             {
-                xPos--;//to avoid overflow, because it's going to be incremented
                 endLevel = true;
             }
-
+            int newX = xPos;
+            int newY = yPos;
             switch (direction)
             {
                 case Direction.Up:
-                    yPos += 1;
+                    newY += 1;
                     break;
                 case Direction.Down:
-                    yPos -= 1;
+                    newY -= 1;
                     break;
                 case Direction.Right:
-                    xPos += 1;
+                    newX += 1;
                     break;
                 case Direction.Left:
-                    xPos -= 1;
+                    newX -= 1;
                     break;
             }
-            sectionGrid[xPos][yPos] = true;
-            pathTaken.Add(direction);
-            AddSectionWalls(xPos, yPos, direction, previousDirection);
-            previousDirection = direction;
+            if (endLevel)
+            {
+                AddSectionWalls(xPos, yPos, direction, previousDirection);
+                pathTaken.Add(direction);
+                previousDirection = direction;
+            }
+            else if (!sectionGrid[newX][newY]) //only progress if we're not going back to a previous cell
+            {
+                AddSectionWalls(xPos, yPos, direction, previousDirection);
+                xPos = newX;
+                yPos = newY;
+                sectionGrid[xPos][yPos] = true;
+                pathTaken.Add(direction);
+                
+                previousDirection = direction;
+            }
 
         }
         LogGrid<bool>(sectionGrid);
+        LogSectionWalls();
         path += string.Join(",", pathTaken);
         Debug.Log(path);
 
@@ -248,7 +307,40 @@ public class ProceduralLevelGenerator : MonoBehaviour
         }
         Debug.Log(gridString);
     }
+    private void LogSectionWalls()
+    {
+        string wallsString = "";
+        for (int y = SectionGridHeight; y >= 0; y--)
+        {
+            for (int x = 0; x <= SectionGridWidth; x++)
+            {
+                if (y < SectionGridHeight && sectionWallsVertical[x][y])
+                {
+                    wallsString += "|";
+                }
+                else
+                {
+                    wallsString += " ";
+                }
 
+
+                if (x < SectionGridWidth)
+                {
+                    if (sectionWallsHorizontal[x][y])
+                    {
+                        wallsString += "_ ";
+                    }
+                    else
+                    {
+                        wallsString += "  ";
+                    }
+                }
+
+            }
+            wallsString += "\n";
+        }
+        Debug.Log(wallsString);
+    }
     private void InitialiseGrids()
     {
         grid = new List<List<int>>();

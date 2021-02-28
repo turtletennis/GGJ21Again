@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
@@ -478,27 +478,27 @@ PrefabInstance:
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710784
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710576
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.00001
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3325332861645745761, guid: 8e6b218e24db2b74aabd4a909d84c742,
         type: 3}
@@ -815,11 +815,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Block: {fileID: 241838546165957364, guid: f6a364ce6ec07054fa1b3191dbd39a4f, type: 3}
+  HorizontalCellWall: {fileID: 3730485715771393818, guid: 8d70a1151b050214aae75020b507ee4f,
+    type: 3}
+  VerticalCellWall: {fileID: 8429802759476842487, guid: 53415d0ad6dd34b4f8e64d0cb0e71861,
+    type: 3}
   WinZone: {fileID: 3907573889394784575, guid: 5d44fe315fc844b468869c42c026fd22, type: 3}
   BlockWidth: 2
   BlockHeight: 2
   GridWidth: 100
   GridHeight: 100
+  SectionGridWidth: 8
+  SectionGridHeight: 8
   MaxJumpHeight: 2
   JumpPower: 25
   GravityPower: 100
@@ -985,7 +991,7 @@ PrefabInstance:
     - target: {fileID: 241838546165957365, guid: f6a364ce6ec07054fa1b3191dbd39a4f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 241838546165957365, guid: f6a364ce6ec07054fa1b3191dbd39a4f,
         type: 3}
@@ -995,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 241838546165957365, guid: f6a364ce6ec07054fa1b3191dbd39a4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 241838546165957365, guid: f6a364ce6ec07054fa1b3191dbd39a4f,
         type: 3}
