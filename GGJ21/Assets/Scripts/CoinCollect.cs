@@ -13,6 +13,10 @@ public class CoinCollect : MonoBehaviour
     void Start()
     {
         gameSFX = FindObjectOfType<GameSFX>();
+        if (gameSFX == null)
+        {
+            Debug.Log("Missing gameSFX");
+        }
         canvas = GameObject.Find("Canvas").GetComponent<CanvasScript>();
         scoreTracker = GetComponent<ScoreTracker>();
     }
@@ -30,7 +34,9 @@ public class CoinCollect : MonoBehaviour
         {
             scoreTracker.AddScore(coinScoreValue);
             GameObject.Destroy(other.gameObject);
-            gameSFX.PlayGameSFX("coin");
+            
+            gameSFX?.PlayGameSFX("coin");
+            
         }
     }
 }
