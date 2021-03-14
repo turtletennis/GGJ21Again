@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Teen Room.unity
     guid: 66bbc244691548e43886a6d56275572b
   - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 5c95d75dd32fa2e499755890f07112ba
+  - enabled: 1
     path: Assets/Scenes/End.unity
     guid: dcc506208f4d7664798b233901ec2ae4
   m_configObjects: {}
