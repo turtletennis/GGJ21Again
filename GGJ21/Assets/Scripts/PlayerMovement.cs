@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpReady = true; //Needed for double jumps
 
     public bool isWalking;
+    public Vector3 PlatformOffset = Vector3.zero;
 
     private playerSounds playerSounds;
 
@@ -55,21 +56,28 @@ public class PlayerMovement : MonoBehaviour
             handleJump();
             movement();
         }
-        /*
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (!controller.isGrounded && jumpsLeft > 0)
-            {
-                addJump();
-            }
-        }
-        */
         else
         {
             if (animator.enabled) animator.enabled = false;
         }
-    }
 
+        if (HandleCheat())
+        {
+            
+            var winLevel = GetComponent<LevelFinishHit>();
+            winLevel.WinLevel();
+        }
+    }
+    private int cheatProgress=0;
+    private KeyCode[] LevelSkip = { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.UpArrow };
+    private bool HandleCheat()
+    {
+        if (Input.GetKeyDown(LevelSkip[cheatProgress]))
+        {
+            cheatProgress++;
+        }
+        return cheatProgress == LevelSkip.Length;
+    }
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("ICH");
@@ -159,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-        controller.Move(new Vector3(xMove, yVelocity, 0)  * Time.deltaTime);
+        controller.Move(new Vector3(xMove, yVelocity, 0)  * Time.deltaTime + PlatformOffset * Time.deltaTime);
     }
 
    

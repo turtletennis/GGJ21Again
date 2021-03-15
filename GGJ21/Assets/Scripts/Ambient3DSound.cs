@@ -39,7 +39,7 @@ public class Ambient3DSound : MonoBehaviour
         soundEmitterA.clip = sFXToPlayA;
         soundEmitterA.Play();
 
-        Debug.Log("TE");
+        //Debug.Log("TE");
         //}
     }
     private void OnTriggerExit(Collider other)

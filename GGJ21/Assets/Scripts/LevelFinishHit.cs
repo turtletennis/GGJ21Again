@@ -25,40 +25,29 @@ public class LevelFinishHit : MonoBehaviour
         scoreTracker = GetComponent<ScoreTracker>();
     }
 
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("LevelEnd") && !hasFinishedLevel)
         {
-            if (gameSFX == null)
-            {
-                gameSFX = FindObjectOfType<GameSFX>();
-            }
-            //remove double-jump ability if set
-            hasFinishedLevel = true;
-            scoreTracker.AddScore(levelFinishScoreValue);
-            PlayerMovement.ResetPowers();
-            gameSFX?.PlayGameSFX("LevelEnd");
-            //StartCoroutine(LevelFinish());
-            SceneManager.LoadScene(nextSceneName);
-            musicManager?.StopMusic();
-            hasFinishedLevel = false;
-
-
-            //Update this when we get a death animation
+            WinLevel();
         }
     }
 
-    //IEnumerator LevelFinish()
-    //{
-
-    //    //yield return new WaitWhile(() => gameSFX.IsSoundPlaying());
-        
-    //}
-
+    public void WinLevel()
+    {
+        if (gameSFX == null)
+        {
+            gameSFX = FindObjectOfType<GameSFX>();
+        }
+        //remove double-jump ability if set
+        hasFinishedLevel = true;
+        scoreTracker.AddScore(levelFinishScoreValue);
+        PlayerMovement.ResetPowers();
+        gameSFX?.PlayGameSFX("LevelEnd");
+        //StartCoroutine(LevelFinish());
+        SceneManager.LoadScene(nextSceneName);
+        musicManager?.StopMusic();
+        hasFinishedLevel = false;
+    }
 
 }

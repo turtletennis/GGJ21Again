@@ -13,9 +13,23 @@ public class AudioSceneSetUp : MonoBehaviour
     void Start()
     {
         _myMusicManager = FindObjectOfType<MusicManager2>();
-        _myMusicManager.StartMusicOnLevelLoad(musicForLevel);
+        if (_myMusicManager != null)
+        {
+            _myMusicManager.StartMusicOnLevelLoad(musicForLevel);
+        }
+        else
+        {
+            Debug.Log("Missing Music Manager!");
+        }
         _myAmbManager = FindObjectOfType<AmbienceManager>();
-        _myAmbManager.StartAmbienceOnLevelLoad(ambienceForLevel);
+        if (_myAmbManager != null)
+        {
+            _myAmbManager.StartAmbienceOnLevelLoad(ambienceForLevel);
+        }
+        else
+        {
+            Debug.Log("Missing Ambience Manager!");
+        }
     }
 
     // Update is called once per frame
